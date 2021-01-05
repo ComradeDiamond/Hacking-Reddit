@@ -1,0 +1,6 @@
+A self-explanatory command!
+The use command allows you to use an item. Just make sure to type the item name correctly.
+What counts as an item?
+Anything inside your inventory.
+Be warned though. Some items are consumed upon use. Some are not.
+There's really no way to tell until it's too late.

@@ -1,0 +1,2 @@
+Opens any program as a background task.
+Once it's a background task, use swap to access them!

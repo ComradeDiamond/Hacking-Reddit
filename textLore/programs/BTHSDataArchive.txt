@@ -1,0 +1,11 @@
+A famous invention by the ancient Software Engineers, this data archive contains all BTHS information.
+This contains all IT Infrastructure class notes, all past lessons, and...
+Hmm...
+Let's just say BTHS trade secrets.
+
+If you do something, maybe something secretive, you can find a path towards victory.
+But be warned. The data is from the early days of the Software major and is very oudated.
+
+So outdated, in fact, everything is from 2018.
+Ok, that was a bad lie.
+But hey, archived data is still archived data, even if it's from the old days where juniors took Web Dev.

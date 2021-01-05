@@ -1,0 +1,3 @@
+We get it - programs cost alot of batteries to run in the background.
+We also know every command would drain batteries if your background tasks are going wack
+That's why you can now close your programs lmao

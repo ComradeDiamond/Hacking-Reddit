@@ -1,0 +1,5 @@
+Amazon Web Service, dutifully at your service.
+This is the place where srs bot is hosted.
+This means if you want to test srs bot, you'll need to have this program open.
+
+Otherwise... there's nothing really much to do here.
