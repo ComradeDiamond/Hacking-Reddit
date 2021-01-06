@@ -92,6 +92,12 @@ public class SilkRoad extends Programs
         System.out.println("Purchase successful! Remember that due to the integrity of the dark web, we won't adjust for your inventory space.");
         requestedItem.addToInventory();
         this.getTargetPlayer().moneyChange(-1 * requestedItem.getCost());
+
+        int bitcoinMultiplier = this.getTargetPlayer().usedBitcoins() ? 5 : 50;
+        int susMultiplier = this.getTargetPlayer().usedBitcoins() ? 2 : (int)(Math.random() * 50 + 20);
+
+        this.getTargetPlayer().changeRiskChance((int) (Math.random() * bitcoinMultiplier));
+        this.getTargetPlayer().changeSus(susMultiplier);
     }
 
     /**

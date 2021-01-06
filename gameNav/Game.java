@@ -130,6 +130,9 @@ public class Game {
             return true;
         }
 
+        //Check lawsuits
+        //Check sus
+
         if (!player.isProgramOpen("Discord"))
         {
             //5% chance server will go into riot mode if discord is closed

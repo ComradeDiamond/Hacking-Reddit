@@ -22,14 +22,14 @@ public class Shop extends Commands
 
     /**
      * Uses the shop command.
+     * Precondition: Text should be the name of a valid shop item
      * Postcondition: Triggers the buy method in the current program.
      * The burden of printing what went wrong falls to command of the programs
+     * @param commands The command array parsed by CommandWord
+     * @param text The rest of the command as a string without the actual command
      */
-    public void use()
+    public void execute(String[] commands, String text)
     {
-        System.out.println("Insert name of item to buy: ");
-        String itemName = this.getScanner().nextLine();
-        
-        this.getTargetPlayer().getCurrentProgram().buy(itemName);
+        this.getTargetPlayer().getCurrentProgram().buy(text);
     }
 }
