@@ -29,12 +29,13 @@ public class SilkRoad extends Programs
         super("Silk Road", targetPlayer, false);
 
         this.shopList = new Items[] {
-
+            new CleansingFoam(targetPlayer)
         };
     }
 
     /**
      * Observe method. Will alert the user of any black market deals they might be interested in.
+     * Precondition: this.shopList.length >= 1
      * Postcondition: Prints a fancy description of a random item in this.shopList
      */
     public void observe()
@@ -42,5 +43,13 @@ public class SilkRoad extends Programs
         this.getTargetPlayer().changeSus(1);
         this.getTargetPlayer().changeRiskChance(10);
 
+        Items currItem = this.shopList[(int) (Math.random() * this.shopList.length)];
+
+        String str = "----------Dark Web Auction-----------\n" +
+        "Item: " + currItem.getName() + "\n" + 
+        "Cost: $" + currItem.getCost() + "\n" +
+        "-----------------------------------";
+
+        System.out.println(str);
     }
 }

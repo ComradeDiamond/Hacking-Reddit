@@ -16,6 +16,6 @@ public class CleansingFoam extends Items
      */
     public CleansingFoam(Player targetPlayer) throws Exception
     {
-        super("Cleansing Foam", targetPlayer);
+        super("Cleansing Foam", targetPlayer, true, 80);
     }
 }
