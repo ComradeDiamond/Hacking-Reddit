@@ -19,9 +19,15 @@ public class Items extends JustinWare {
     private boolean consumable;
 
     /**
+     * The cost of an item. 
+     * Usually only used if the item is in the store.
+     */
+    private int cost;
+
+    /**
      * Constructs an Item, reads the txt file in textLore to obtain description
      * Precondition: c:textLore/programs/<item>.txt has been created
-     * Postcondition: Item object is constructed 
+     * Postcondition: Item object is constructed. Consumable is true and cost is zero.
      * @param name The item name
      * @param targetPlayer The player defined when the game has started, items will act on this obj
      * @throws Exception Will throw if description path is not found
@@ -32,12 +38,13 @@ public class Items extends JustinWare {
             ".txt")), targetPlayer, "Item");
 
         this.consumable = true;
+        this.cost = 0;
     }
 
     /**
      * An alternative constructor that allows you to set whether the item is consumable or not
      * Precondition: c:textLore/programs/<item>.txt has been created
-     * Postcondition: Item object is constructed
+     * Postcondition: Item object is constructed. Cost is set to 0. Consuamble is set to isConsumable
      * @param name The item name
      * @param targetPlayer The player defined when the game has started, items will act on this obj
      * @param isConsumable Whether the item is consumed upon use
@@ -45,14 +52,31 @@ public class Items extends JustinWare {
      */
     public Items(String name, Player targetPlayer, boolean isConsumable) throws Exception
     {
-        super(name, Files.readString(Path.of("c:textLore/items/" + name.replaceAll(" ", "") + 
-            ".txt")), targetPlayer, "Item");
+        this(name, targetPlayer);
 
         this.consumable = isConsumable;
     }
 
     /**
-     * A third alternative constructor that allows you to copy an existing object as a new object.
+     * An alternative constructor that allows you to set whether the item is consumable or not
+     * This will ALSO allow you to set the Items cost.
+     * Precondition: c:textLore/programs/<item>.txt has been created
+     * Postcondition: Item object is constructed
+     * @param name The item name
+     * @param targetPlayer The player defined when the game has started, items will act on this obj
+     * @param isConsumable Whether the item is consumed upon use
+     * @param cost The item cost
+     * @throws Exception Will throw if Items.txt does not exist
+     */
+    public Items(String name, Player targetPlayer, boolean isConsumable, int cost) throws Exception
+    {
+        this(name, targetPlayer, isConsumable);
+
+        this.cost = cost;
+    }
+
+    /**
+     * A fourth alternative constructor that allows you to copy an existing object as a new object.
      * The new object will be of the same class, same name, and same consumable value. 
      * However, it will get a new secondary scanner.
      * Precondition: other is successfully constructed
@@ -62,8 +86,7 @@ public class Items extends JustinWare {
      */
     public Items(Items other) throws Exception
     {
-        super(other.getName(), other.getDescription(), other.getTargetPlayer(), "Item");
-        this.consumable = other.getConsumable();
+        this(other.getName(), other.getTargetPlayer(), other.getConsumable(), other.getCost());
     }
 
     /**
@@ -104,5 +127,14 @@ public class Items extends JustinWare {
         {
             System.out.println("A " + this.getName() + " has been added to your inv.");
         }
+    }
+
+    /**
+     * Returns the cost of the item
+     * @return this.cost
+     */
+    public int getCost()
+    {
+        return this.cost;
     }
 }

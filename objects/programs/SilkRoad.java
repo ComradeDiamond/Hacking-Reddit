@@ -1,5 +1,6 @@
 package objects.programs;
 import gameNav.Player;
+import objects.items.*;
 
 /**
  * The dark web auction house where you buy illegal stuff that's more illegal than what I'm doing rn.
@@ -12,13 +13,34 @@ import gameNav.Player;
 public class SilkRoad extends Programs
 {
     /**
+     * Private attribute that stores all the items the black market can sell
+     */
+    private Items[] shopList;
+
+    /**
      * Constructs a silk road program according to instructions provided by superclass.
-     * Postcondition: Creates a silk road object that is NOT ENABLED
+     * Postcondition: Creates a silk road object that is NOT ENABLED.
+     * Postcondition: Initializes shopList
      * @param targetPlayer The main player inside the game
      * @throws Exception if SilkRoad.txt does not exist
      */
     public SilkRoad(Player targetPlayer) throws Exception
     {
         super("Silk Road", targetPlayer, false);
+
+        this.shopList = new Items[] {
+
+        };
+    }
+
+    /**
+     * Observe method. Will alert the user of any black market deals they might be interested in.
+     * Postcondition: Prints a fancy description of a random item in this.shopList
+     */
+    public void observe()
+    {
+        this.getTargetPlayer().changeSus(1);
+        this.getTargetPlayer().changeRiskChance(10);
+
     }
 }

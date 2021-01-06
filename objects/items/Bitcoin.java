@@ -23,6 +23,6 @@ public class Bitcoin extends Items
     public void use()
     {
         this.getTargetPlayer().setBitcoins(true);
-        System.out.println("You registered for the bitcoin wallet. Looks like your money does not exist anymore!");
+        System.out.println("You registered for the bitcoin wallet. Looks like your money doesn't exist anymore!");
     }
 }
