@@ -54,6 +54,47 @@ public class SilkRoad extends Programs
     }
 
     /**
+     * Buy command - allows you to buy a dark web item.
+     * Precondition: itemName is an item name in this.shopList.
+     * Precondition: TargetPlayer money is >= the item cost
+     * Precondition: Your inventory is not full
+     * Postcondition: The item is added to your inventory.
+     * Postcondition: Your risk stat will increase by a random amount.
+     * Postcondition: Your sus stat will increase by a random amt depending on whether you have bitcoin.
+     */
+    public void buy(String itemName)
+    {
+        Items requestedItem = null;
+
+        for (Items item : this.shopList)
+        {
+            if (item.getName().equalsIgnoreCase(itemName))
+            {
+                requestedItem = item;
+                break;
+            }
+        }
+
+        //If item does not exist, yell at the player
+        if (requestedItem == null)
+        {
+            System.out.println("The item does not exist...");
+            return;
+        }
+
+        //If the player is broke, yell at the player
+        if (this.getTargetPlayer().getMoney() < requestedItem.getCost())
+        {
+            System.out.println("You don't have sufficient cash.");
+            return;
+        }
+
+        System.out.println("Purchase successful! Remember that due to the integrity of the dark web, we won't adjust for your inventory space.");
+        requestedItem.addToInventory();
+        this.getTargetPlayer().moneyChange(-1 * requestedItem.getCost());
+    }
+
+    /**
      * Drip method in the silk road.
      * This is meant to punish people that don't use help before reading a command.
      * It does absolutely nothing, but it serves as a good way to scare users.

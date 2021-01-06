@@ -182,4 +182,12 @@ public class Programs extends JustinWare {
 
         System.out.println(tips[(int) (Math.random() * tips.length)]);
     }
+
+    /**
+     * Default buy command for programs class and polymorph thingy
+     */
+    public void buy()
+    {
+        System.out.println("There's... nothing to buy");
+    }
 }
