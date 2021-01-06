@@ -158,4 +158,28 @@ public class Programs extends JustinWare {
     {
         return Programs.userNameArr[(int)(Math.random() * userNameArr.length)];
     }
+
+    /**
+     * The default method for Drip();
+     * Drip is called when the user uses some drip on a program to try to get information.
+     * This will return general, useless game tips
+     */
+    public void Drip()
+    {
+        String[] tips = {
+            "Make sure you check batteries",
+            "It might be a good idea to look at discord",
+            "Did you know that Github commits keep track of your game progress?",
+            "Did you know github exists?",
+            "Did you know you should use srs bot logs in github to keep track of progress?",
+            "Did you know you couldn't win until everything you do is formally cemented into github?",
+            "Github keeps track of progress, if you haven't heard",
+            "Social media is weird. You'll need to comment something based to get attention",
+            "We tried to add a charge command, but we figured that would make the game too easy",
+            "At one point Justin decided to add a bunch of items. Hey, they're useless but they give a small boost",
+            "If you defend Dream, good things may happen to you"
+        };
+
+        System.out.println(tips[(int) (Math.random() * tips.length)]);
+    }
 }
