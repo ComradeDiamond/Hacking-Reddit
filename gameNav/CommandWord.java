@@ -36,7 +36,8 @@ public class CommandWord {
             new HelpMe(targetPlayer),
             new Observe(targetPlayer),
             new Use(targetPlayer),
-            new Upload(targetPlayer)
+            new Upload(targetPlayer),
+            new Shop(targetPlayer)
         };
     }
 
