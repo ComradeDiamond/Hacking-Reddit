@@ -160,11 +160,11 @@ public class Programs extends JustinWare {
     }
 
     /**
-     * The default method for Drip();
+     * The default method for drip();
      * Drip is called when the user uses some drip on a program to try to get information.
      * This will return general, useless game tips
      */
-    public void Drip()
+    public void drip()
     {
         String[] tips = {
             "Make sure you check batteries",
