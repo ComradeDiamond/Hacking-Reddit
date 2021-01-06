@@ -1,6 +1,9 @@
 package objects.programs;
+import java.util.ArrayList;
+
 import gameNav.Player;
 import objects.items.*;
+import objects.lawsuits.*;
 
 /**
  * Discord - the bot testing platform!
@@ -125,6 +128,12 @@ public class Discord extends Programs
     private CatEmote catEmote;
 
     /**
+     * The arrayList of all the lawsuits the user has.
+     * When you add this last second lmao
+     */
+    private ArrayList<Lawsuits> suitList;
+
+    /**
      * Constructs a discord program.
      * PostCondition: Sets the riotPhase to 0, usedCatEmote to false, inits catEmote and itemArr
      * @param targetPlayer The main punique player initialized in the game
@@ -140,6 +149,8 @@ public class Discord extends Programs
         this.itemArr = new Items[] {
             new Donut(targetPlayer)
         };
+
+        this.suitList = new ArrayList<Lawsuits>();
     }
 
     /**

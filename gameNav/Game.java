@@ -131,7 +131,13 @@ public class Game {
         }
 
         //Check lawsuits
+
         //Check sus
+        if (player.getSus() >= 100)
+        {
+            this.endingSus();
+            return true;
+        }
 
         if (!player.isProgramOpen("Discord"))
         {
@@ -225,5 +231,15 @@ public class Game {
     private void endingEnergy() throws Exception
     {
         this.lineByLine("Energy");
+    }
+
+    /**
+     * Prints the ending for the FBI ending.
+     * Triggered when risk >= 100
+     * @throws Exception if FBI.txt does not exist
+     */
+    private void endingSus() throws Exception
+    {
+        this.lineByLine("FBI");
     }
 }
