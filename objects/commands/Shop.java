@@ -21,11 +21,15 @@ public class Shop extends Commands
     }
 
     /**
-     * Uses the shop command
-     * Postcondition: Triggers the buy method in the current program
+     * Uses the shop command.
+     * Postcondition: Triggers the buy method in the current program.
+     * The burden of printing what went wrong falls to command of the programs
      */
     public void use()
     {
-        this.getTargetPlayer().getCurrentProgram().buy();
+        System.out.println("Insert name of item to buy: ");
+        String itemName = this.getScanner().nextLine();
+        
+        this.getTargetPlayer().getCurrentProgram().buy(itemName);
     }
 }

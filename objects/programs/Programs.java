@@ -186,7 +186,7 @@ public class Programs extends JustinWare {
     /**
      * Default buy command for programs class and polymorph thingy
      */
-    public void buy()
+    public void buy(String itemName)
     {
         System.out.println("There's... nothing to buy");
     }
