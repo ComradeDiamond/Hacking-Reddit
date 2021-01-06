@@ -52,4 +52,25 @@ public class SilkRoad extends Programs
 
         System.out.println(str);
     }
+
+    /**
+     * Drip method in the silk road.
+     * This is meant to punish people that don't use help before reading a command.
+     * It does absolutely nothing, but it serves as a good way to scare users.
+     * It also fills their screen with spam
+     */
+    public void drip()
+    {
+        System.out.println("Weirdly, people think you're an FBI agent investigating here!");
+        System.out.println("Your risk of lawsuits drastically increased!");
+        System.out.println("Your suspicion drastically increased!");
+        System.out.println("Your lawyers have been doxxed, and now their effectiveness rate has decline by 50%!");
+        System.out.println("All your github progress have been reversed!");
+        System.out.println("Your bitcoin priveledges have now been revoked.\n");
+
+        for (int i=0; i<50; i++)
+        {
+            System.out.println("aaaaaaaaccccccccoooooooo");
+        }
+    }
 }
