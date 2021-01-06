@@ -131,6 +131,11 @@ public class Game {
         }
 
         //Check lawsuits
+        if (((Discord)ProgramList.fetch("Discord")).suitCalc(player.getRiskChance()) >= 10)
+        {
+            this.endingRisk();
+            return true;
+        }
 
         //Check sus
         if (player.getSus() >= 100)
@@ -241,5 +246,15 @@ public class Game {
     private void endingSus() throws Exception
     {
         this.lineByLine("FBI");
+    }
+
+    /**
+     * Prints the cheesy Millenial humor Judge Judy ending.
+     * Triggered when lawsuit >= 10.
+     * @throws Exception if Lawsuit.txt does not exist
+     */
+    private void endingRisk() throws Exception
+    {
+        this.lineByLine("Lawsuit");
     }
 }

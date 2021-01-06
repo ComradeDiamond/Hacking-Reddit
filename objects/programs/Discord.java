@@ -246,4 +246,50 @@ public class Discord extends Programs
     {
         return Discord.foundArr[(int) (Math.random() * Discord.foundArr.length)];
     }
+
+    /**
+     * Gets the number of lawsuits the player has
+     * @return this.suitList.size()
+     */
+    public int suitNum()
+    {
+        return this.suitList.size();
+    }
+
+    /**
+     * Calculates whether or not the player will get a lawsuit. If the RNGezus gods match, player gets a lawsuit
+     * @param riskChance The player's risk chance
+     *  @return The number of lawsuits the player has
+     */
+    public int suitCalc(int riskChance)
+    {
+        if ((int)(Math.random() * 100) <= riskChance)
+        {
+            this.addLawsuit();
+        }
+
+        return this.suitNum();
+    }
+
+    /**
+     * Adds a lawsuit to the player.
+     * Postcondition: Adds a random lawsuit of a random type to the arrayList of lawsuits
+     */
+    public void addLawsuit()
+    {
+        switch((int) Math.random() * 4)
+        {
+            case 0:
+            break;
+
+            case 1:
+            break;
+
+            case 2:
+            break;
+
+            case 3:
+            break;
+        }
+    }
 }
