@@ -63,9 +63,19 @@ public class CAD extends Lawsuits
         ;
     }
 
+    /**
+     * Overloaded effect method for CAD.
+     * This will enact the effects of the CAD lawsuit.
+     * Reminds the user the CAD lawsuit is now active
+     * Postcondition: If the target program is open, close the program.
+     * Postcondition: Set the target program to disabled until lawsuit is gone
+     */
     public void effect()
     {
         this.program = ProgramList.fetchRandomProgram();
+        this.getTargetPlayer().removeProgram(this.program.getName());
+
+        System.out.println("A cease and desist lawsuit just went into effect.");
         this.program.setEnabled(false);
     }
 

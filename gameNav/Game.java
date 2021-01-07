@@ -131,7 +131,7 @@ public class Game {
         }
 
         //Check lawsuits
-        if (((Discord)ProgramList.fetch("Discord")).suitCalc(player.getRiskChance()) >= 10)
+        if (((Discord)ProgramList.fetchAuthority("Discord")).suitCalc(player.getRiskChance()) >= 10)
         {
             this.endingRisk();
             return true;
@@ -149,7 +149,7 @@ public class Game {
             //5% chance server will go into riot mode if discord is closed
             if (Math.floor(Math.random() * 20) == 10)
             {
-                int riotPhase = ((Discord)ProgramList.fetch("Discord")).addRiotPhase();
+                int riotPhase = ((Discord)ProgramList.fetchAuthority("Discord")).addRiotPhase();
 
                 if (riotPhase == 4)
                 {

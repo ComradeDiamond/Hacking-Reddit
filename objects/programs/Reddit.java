@@ -200,4 +200,13 @@ public class Reddit extends Programs
             System.out.println("You got " + (int)(Math.random() * 10000 - 9000) + " karma.");
         }
     }
+
+    /**
+     * Returns whether the player has posted in r/Christmas
+     * @return this.postedChristmas
+     */
+    public boolean getChristmas()
+    {
+        return this.postedChristmas;
+    }
 }
