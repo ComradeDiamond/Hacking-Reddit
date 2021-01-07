@@ -196,8 +196,6 @@ public class Game {
         this.lineByLine("Introduction");
     }
 
-    //Game endings - not implemented yet
-
     /**
      * Prints the concede ending trigger
      * Triggered by the player conceding

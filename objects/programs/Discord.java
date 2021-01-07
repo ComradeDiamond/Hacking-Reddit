@@ -176,13 +176,56 @@ public class Discord extends Programs
 
     /**
      * Will print out a random discord finding. 
-     * If you have any standing lawsuits, you'll always observe those first.
+     * If you have any standing lawsuits, you'll always observe those first and get to challenge or resolve them
      * Otherwise, you have a 10% chance to get something, 10% to get a cat emote, and a 10% chance
         to get a random wacky message.
+     * Postcondition: Lawsuit gets removed from suitList if successfully challenged or removed
      */
     public void observe()
     {
         //Observe lawsuits first
+        if (this.suitList.size() > 0)
+        {
+            System.out.println(this.suitList.get(0).getDescription());
+            System.out.println("Choose option:   Fight ($5 minimum)   Settle ($10)");
+            String input = this.getScanner().nextLine();
+
+            switch (input.toLowerCase())
+            {
+                case "fight":
+                    if (this.getTargetPlayer().getMoney() < 5)
+                    {
+                        System.out.println("You're too poor to fight this lawsuit");
+                    }
+                    else
+                    {
+                        if (this.suitList.get(0).challenge(50, true))
+                        {
+                            this.suitList.remove(0);
+                        }
+                    }
+                break;
+
+                case "settle":
+                    if (this.getTargetPlayer().getMoney() < 10)
+                    {
+                        System.out.println("You have no money to settle this.");
+                    }
+                    else
+                    {
+                        this.getTargetPlayer().moneyChange(-10);
+                        this.suitList.remove(0);
+                        System.out.println("You have settled this lawsuit!");
+                    }
+                break;
+
+                default:
+                    System.out.println("... that was not an option");
+                break;
+            }
+
+            return;
+        }
 
         //10% for cat emote if you haven't gotten one yet
         if (!this.usedCatEmote && (int) (Math.random() * 10) == 5)
@@ -277,19 +320,29 @@ public class Discord extends Programs
      */
     public void addLawsuit()
     {
-        switch((int) Math.random() * 4)
+        try
         {
-            case 0:
-            break;
+            switch((int) Math.random() * 4)
+            {
+                case 0:
+                    this.suitList.add(new Negligence(this.getTargetPlayer()));
+                break;
 
-            case 1:
-            break;
+                case 1:
+                    this.suitList.add(new Defamation(this.getTargetPlayer()));
+                break;
 
-            case 2:
-            break;
+                case 2:
+                    this.suitList.add(new Fraud(this.getTargetPlayer()));
+                break;
 
-            case 3:
-            break;
+                case 3:
+                    CAD ceaseDesist = new CAD(this.getTargetPlayer());
+                    this.suitList.add(ceaseDesist);
+                    ceaseDesist.effect();
+                break;
+            }
         }
+        catch(Exception err){}
     }
 }
