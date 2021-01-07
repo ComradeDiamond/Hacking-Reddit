@@ -142,4 +142,16 @@ public class ProgramList {
 
         return true;
     }
+
+    /**
+     * Fetches a random program from the static program array list and returns it.
+     * This can never fetch Discord. Recursion is used to prevent this from happening
+     * @return A random program from ProgramList.programList, but the program cannot be Discord
+     */
+    public static Programs fetchRandomProgram()
+    {
+        Programs a = ProgramList.programList[(int)(Math.random() * ProgramList.programList.length)];
+        
+        return a.getName().equals("Discord") ? ProgramList.fetchRandomProgram() : a;
+    }
 }

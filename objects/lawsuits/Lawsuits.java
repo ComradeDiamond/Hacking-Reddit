@@ -116,4 +116,13 @@ public class Lawsuits extends JustinWare
     {
         return array[(int)(Math.random() * array.length)];
     }
+
+    /**
+     * The default lawsuit method for settle().
+     * This just notified the player that the lawsuit is settled
+     */
+    public void settle()
+    {
+        System.out.println("You have settled this lawsuit!");
+    }
 }

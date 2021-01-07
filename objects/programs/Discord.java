@@ -214,8 +214,8 @@ public class Discord extends Programs
                     else
                     {
                         this.getTargetPlayer().moneyChange(-10);
+                        this.suitList.get(0).settle();
                         this.suitList.remove(0);
-                        System.out.println("You have settled this lawsuit!");
                     }
                 break;
 

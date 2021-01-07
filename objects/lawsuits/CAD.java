@@ -2,6 +2,7 @@ package objects.lawsuits;
 
 import gameNav.Player;
 import gameNav.ProgramList;
+import objects.programs.Programs;
 
 /**
  * CAD is short for cease and desist orders.
@@ -45,6 +46,11 @@ public class CAD extends Lawsuits
     };
 
     /**
+     * The program this lawsuit will disable
+     */
+    private Programs program;
+
+    /**
      * Constructor for the CAD lawsuit
      * @param targetPlayer The main player inside the game
      * @throws Exception if description is undefined (shouldn't be though)
@@ -59,6 +65,42 @@ public class CAD extends Lawsuits
 
     public void effect()
     {
+        this.program = ProgramList.fetchRandomProgram();
+        this.program.setEnabled(false);
+    }
 
+    /**
+     * The command triggered when the user attacks the CAD lawsuit with a lawyer.
+     * Returns if the suit challenge is successful. Triggers a generic victory if it goes above and beyond with the right lawyer.
+     * Postcondition: If the challenge is successful, the program is set to enabled again
+     * @param chance The chance of you winning the lawsuit
+     * @param lawyer Whether or not you have a lawyer. This is temp for now.
+     * @return whether the suit challenge is successful
+     */
+    public boolean challenge(int chance, boolean lawyer) //Note to self: add lawyer
+    {
+        if ((int)(Math.random() * 100) < chance)
+        {
+            if (lawyer)
+            {
+                this.victory();
+            }
+            this.program.setEnabled(true);
+            System.out.println("Lawsuit challenge successful! This lawsuit was thrown out.");
+            return true;
+        }
+        
+        System.out.println("Lawsuit challenge failed. You have the ability to appeal this in court.");
+        return false;
+    }
+
+    /**
+     * The custom settle method for CAD lawsuits. This will settle the lawsuit.
+     * Postcondition: The program that was disabled is now enabled.
+     */
+    public void settle()
+    {
+        System.out.println("You have settled this lawsuit!");
+        this.program.setEnabled(true);
     }
 }
