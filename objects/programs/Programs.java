@@ -177,7 +177,9 @@ public class Programs extends JustinWare {
             "Social media is weird. You'll need to comment something based to get attention",
             "We tried to add a charge command, but we figured that would make the game too easy",
             "At one point Justin decided to add a bunch of items. Hey, they're useless but they give a small boost",
-            "If you defend Dream, good things may happen to you"
+            "If you defend Dream, good things may happen to you",
+            "Have you checked discord for lawsuits?",
+            "Depending on the lawsuit type, one lawyer might work better than another..."
         };
 
         System.out.println(tips[(int) (Math.random() * tips.length)]);

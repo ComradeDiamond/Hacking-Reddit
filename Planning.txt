@@ -77,6 +77,7 @@ Use rainbow table in jgrasp
 Folwell Password cracking powerpoint --> if you view Folwell decryption lessons --> Password Cracker
 Use password cracker in jgrasp and....
 Try to brute force your way in jgrasp (Run time error - computer crashes)  --> If you use glasses on jgrasp tho, you'll know to go on folwell office hours and he'll do it for you
+Apply folwell fix
 Get the reddit private encryption key --> Use it in reddit
 Get access to reddit panel. 
 Change the reddit API TOS. You'll need a password but the data archive should tell you it's smth like "Arrays are trash"

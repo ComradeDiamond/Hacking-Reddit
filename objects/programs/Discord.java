@@ -345,4 +345,15 @@ public class Discord extends Programs
         }
         catch(Exception err){}
     }
+
+    /**
+     * The upload command on Discord will allow you to upload code from srs bot right into here.
+     * This is where you will test the code and recieve a console log.
+     * Precondition: Target player's inventory is not full, and has a spot of null open
+     * Postcondition: A console log is added to your inventory.
+     */
+    public void upload()
+    {
+
+    }
 }
