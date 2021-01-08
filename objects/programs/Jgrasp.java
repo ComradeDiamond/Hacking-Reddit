@@ -37,6 +37,19 @@ public class Jgrasp extends Programs
      * This number will be used to return a nice exception message lol
      */
     private int exceptionIdx;
+
+    /**
+     * Rainbow table --> password cracker --> folwell fix --> API Key
+     * The boolean array to keep track of the hacker ending
+    **/
+    private boolean[] hackerEnding;
+
+    /**
+     * Uploaded all 3 items (return error log once this becomes true),
+     * jsdom --> old reddit link
+     * The boolean array to keep track of the legit ending
+    **/
+    private boolean[] legitEnding;
     
     /**
      * Constructs a Jgrasp object
@@ -48,6 +61,8 @@ public class Jgrasp extends Programs
         super("Jgrasp", targetPlayer);
         this.buggy = false;
         this.exceptionIdx = -1;
+        this.hackerEnding = new boolean[]{false, false, false, false};
+        this.legitEnding = new boolean[]{false, false, false};
     }
 
     /**
@@ -129,5 +144,55 @@ public class Jgrasp extends Programs
         }
 
         System.out.println(Jgrasp.exceptions[this.exceptionIdx]);
+    }
+
+    /**
+     * Checks off the hacker ending and sets item at idx to true.
+     * Precondition: 0 <= idx < 4
+     * @param idx The index of the hacker ending arr to set to true
+     */
+    public void hackerCheckoff(int idx)
+    {
+        this.hackerEnding[idx] = true;
+    }
+
+    /**
+     * Checks off the legit ending and sets item at idx to true.
+     * Precondition: 0 <= idx < 3
+     * @param idx The index of the legit ending arr to set to true
+     */
+    public void normalCheckoff(int idx)
+    {
+        this.legitEnding[idx] = true;
+    }
+
+    /**
+     * Transfers the hacker ending array items to another array.
+     * Precondition: other.length == 4
+     * Postcondition: The hackerEnding array is not modified
+     * Postcondition: Other != this.hackerEnding in terms of references
+     * @param other The other array to transfer the legitEnding values here to
+     */
+    public void transferHacker(boolean[] other)
+    {
+        for (int i=0; i<this.hackerEnding.length; i++)
+        {
+            other[i] = this.hackerEnding[i];
+        }
+    }
+
+    /**
+     * Transfers the legit ending array items to another array.
+     * Precondition: other.length == 3
+     * Postcondition: The legitEnding array is not modified
+     * Postcondition: Other != this.legitEnding in terms of references
+     * @param other The other array to transfer the legitEnding values here to
+     */
+    public void transferLegit(boolean[] other)
+    {
+        for (int i=0; i<this.legitEnding.length; i++)
+        {
+            other[i] = this.legitEnding[i];
+        }
     }
 }
