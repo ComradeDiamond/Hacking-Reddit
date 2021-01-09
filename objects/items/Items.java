@@ -1,8 +1,12 @@
 package objects.items;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
+
 import gameNav.Player;
 import objects.JustinWare;
+import objects.programs.Jgrasp;
+import objects.programs.Programs;
 
 /**
  * The top class to creating items
@@ -136,5 +140,33 @@ public class Items extends JustinWare {
     public int getCost()
     {
         return this.cost;
+    }
+
+    /**
+     * A public, frequently used method to determine whether the current program is jgrasp.
+     * Also determines whether jrasp is buggy.
+     * The burden of error reporting what went wrong is the responsibility of this method
+     * @return Whether or not the current program is jgrasp. If it is, return whether it is not buggy
+     */
+    public boolean validJgrasp()
+    {
+        Programs currProg = this.getTargetPlayer().getCurrentProgram();
+        boolean isJgr = currProg.getName().equalsIgnoreCase("Jgrasp");
+
+        if (!isJgr)
+        {
+            System.out.println("This program is not a Java IDE");
+            return false;
+        }
+
+        boolean isBuggy = ((Jgrasp)currProg).getBuggy();
+        
+        if (isBuggy)
+        {
+            ((Jgrasp)currProg).throwException();
+            return false;
+        }
+
+        return true;
     }
 }

@@ -27,21 +27,20 @@ public class RainbowTable extends Items
      * Uses the rainbow table.
      * Postcondition: If this is jgrasp, set this to consumable.
      * Postcondition: Set jgrasp module for having an hash algorithm to true.
+     * Postcondition: Jgrasp throws a bug
      */
     public void use()
     {
-        Programs program = this.getTargetPlayer().getCurrentProgram();
-
-        if (program.getName().equalsIgnoreCase("Jgrasp"))
+        if (this.validJgrasp())
         {
+            Jgrasp currProg = ((Jgrasp)this.getTargetPlayer().getCurrentProgram());
             this.setConsumable(true);
-            ((Jgrasp) program).hackerCheckoff(0);
+
             System.out.println("You input the rainbow table algorithm into jgrasp.");
             System.out.println("It seems to accept it..?");
-        }
-        else
-        {
-            System.out.println("It seems you can't jam a rainbow table anywhere here");
+
+            currProg.hackerCheckoff(0);
+            currProg.setBuggy(true);
         }
     }
 }

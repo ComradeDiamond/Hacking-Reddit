@@ -1,6 +1,8 @@
 package objects.items;
 
 import gameNav.Player;
+import objects.programs.Programs;
+import objects.programs.Jgrasp;
 
 /**
  * The observable code :P
@@ -19,6 +21,32 @@ public class ObservableCode extends Items
      */
     public ObservableCode(Player targetPlayer) throws Exception
     {
-        super("Observable Code", targetPlayer);
+        super("Observable Code", targetPlayer, false);
+    }
+
+    /**
+     * Checks off the first step to a legit ending in jgrasp
+     * Precondition: The current program is jgrasp
+     * Postcondition: Checks off the first step to a legitamate Jgrasp ending
+     * Postcondition: Jgrasp throws a huge exception. Player recieves an error log thingy, idk
+     * Postcondition: Sets consumable to true
+     */
+    public void use()
+    {
+        if (this.validJgrasp())
+        {
+            Jgrasp currProg = (Jgrasp)this.getTargetPlayer().getCurrentProgram();
+            
+            this.setConsumable(true);
+            currProg.normalCheckoff(0);
+
+            String str = "You took your sheet of compiled observable code and yeeted them into jgrasp.\n" +
+            "Jgrasp magically understands what patterns to follow.\n" +
+            "It types in a bunch of HTML I don't understand.";
+
+            System.out.println(str);
+
+            //Insert part where jgrasp throws a really big exception
+        }
     }
 }

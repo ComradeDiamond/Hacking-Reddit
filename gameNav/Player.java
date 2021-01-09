@@ -502,4 +502,16 @@ public class Player {
     {
         this.sus += num;
     }
+
+    /**
+     * Sets everything in the current programOpen attribute to null.
+     * Postcondition: this.programsOpen instance variable refers to the same array
+     */
+    public void closeAllPrograms()
+    {
+        for (int i=0; i<this.programsOpen.length; i++)
+        {
+            this.programsOpen[i] = null;
+        }
+    }
 }

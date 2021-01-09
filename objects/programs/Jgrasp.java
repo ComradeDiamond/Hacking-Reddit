@@ -135,8 +135,13 @@ public class Jgrasp extends Programs
      * Will I get points off this project if Folwell sees an exception?
      * I dunno
      */
-    private void throwException()
+    public void throwException()
     {
+        if (!this.buggy)
+        {
+            System.out.println("Can't throw exception... it's not buggy");
+        }
+
         //Grabs a random thing from exceptions array
         if (this.exceptionIdx == -1)
         {
