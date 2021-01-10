@@ -1,6 +1,8 @@
 package objects.programs;
 import gameNav.Player;
 import gameNav.ProgramList;
+import objects.items.Debugger;
+import objects.items.DevTool;
 
 /**
  * StackOverflow - the go to hub for Q&A Inside the game
@@ -60,12 +62,20 @@ public class StackOverflow extends Programs
 
             if (b1 && b2 && b3)
             {
-                //Give devTool
+                try
+                {
+                    new DevTool(this.getTargetPlayer()).addToInventory();
+                }
+                catch(Exception e){}
             }
         }
         else if (((Jgrasp)ProgramList.fetchAuthority("Jgrasp")).getBuggy())
         {
-
+            try
+            {
+                new Debugger(this.getTargetPlayer()).addToInventory();
+            }
+            catch(Exception e){}
         }
         else
         {

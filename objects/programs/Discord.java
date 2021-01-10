@@ -313,7 +313,7 @@ public class Discord extends Programs
      */
     public int suitCalc(int riskChance)
     {
-        if ((int)(Math.random() * 100) <= (riskChance/2))
+        if ((int)(Math.random() * 100) <= riskChance)
         {
             this.addLawsuit();
         }

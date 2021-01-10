@@ -209,4 +209,16 @@ public class Reddit extends Programs
     {
         return this.postedChristmas;
     }
+
+    /**
+     * Buy command - allows you to buy a random reddit item.
+     * Precondition: TargetPlayer money is >= the item cost
+     * Precondition: Your inventory is not full
+     * Postcondition: The item is added to your inventory.
+     * Postcondition: Your risk stat increases by 5
+     */
+    public void shop()
+    {
+        
+    }
 }
