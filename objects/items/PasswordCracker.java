@@ -2,7 +2,7 @@ package objects.items;
 
 import gameNav.Player;
 import objects.programs.Jgrasp;
-import objects.programs.Programs;
+//import objects.programs.Programs;
 
 /**
  * Password Cracker item.
@@ -30,6 +30,7 @@ public class PasswordCracker extends Items
      * Postcondition: If the program is jgrasp, set consumable to true.
      * Postcondition: Crashes all your programs.
      * Postcondition: Sets jgrasp to buggy
+     * Postcondition: Increases sus and risk
      */
     public void use()
     {        
@@ -42,6 +43,7 @@ public class PasswordCracker extends Items
 
             this.getTargetPlayer().closeAllPrograms();
             this.getTargetPlayer().changeSus(5);
+            this.getTargetPlayer().changeRiskChance(10);
             this.getTargetPlayer().batteryChange(-15);
             
             currProg.setBuggy(true);

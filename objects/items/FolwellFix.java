@@ -2,7 +2,6 @@ package objects.items;
 
 import gameNav.Player;
 import objects.programs.Jgrasp;
-import objects.programs.Programs;
 
 /**
  * Folwell Fix Code that allows Jgrasp to move past the brute forcing errors
@@ -28,6 +27,7 @@ public class FolwellFix extends Items
      * Postcondition: Checks off step 3 in hacker ending jgrasp
      * Postcondition: Jgrasp does a jgrasp. Nothing new I swear ;-;
      * Postcondition: If the program is jgrasp, this is set to consumable
+     * Postcondition: Increases risk and sus by 5 and 10 respectively
      */
     public void use()
     {
@@ -40,6 +40,9 @@ public class FolwellFix extends Items
             currProg.hackerCheckoff(2);
             currProg.setBuggy(true);
             this.setConsumable(true);
+
+            this.getTargetPlayer().changeRiskChance(10);
+            this.getTargetPlayer().changeSus(5);
 
             System.out.println("Wait nvm... i lied");
         }

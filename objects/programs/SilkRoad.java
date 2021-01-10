@@ -29,7 +29,12 @@ public class SilkRoad extends Programs
         super("Silk Road", targetPlayer, false);
 
         this.shopList = new Items[] {
-            new CleansingFoam(targetPlayer)
+            new CleansingFoam(targetPlayer),
+            new RiotShield(targetPlayer),
+            new IKEATable(targetPlayer),
+            new Sunglasses(targetPlayer),
+            new AI(targetPlayer),
+            new BTHSDataArchives(targetPlayer)
         };
     }
 
@@ -37,6 +42,7 @@ public class SilkRoad extends Programs
      * Observe method. Will alert the user of any black market deals they might be interested in.
      * Precondition: this.shopList.length >= 1
      * Postcondition: Prints a fancy description of a random item in this.shopList
+     * Postcondition: changes sus by 2 and risk by 1
      */
     public void observe()
     {
@@ -50,6 +56,8 @@ public class SilkRoad extends Programs
         "Cost: $" + currItem.getCost() + "\n" +
         "-----------------------------------";
 
+        this.getTargetPlayer().changeSus(2);
+        this.getTargetPlayer().changeRiskChance(1);
         System.out.println(str);
     }
 
@@ -89,12 +97,12 @@ public class SilkRoad extends Programs
             return;
         }
 
-        System.out.println("Purchase successful! Remember that due to the integrity of the dark web, we won't adjust for your inventory space.");
+        System.out.println("Purchased!");
         requestedItem.addToInventory();
         this.getTargetPlayer().moneyChange(-1 * requestedItem.getCost());
 
         int bitcoinMultiplier = this.getTargetPlayer().usedBitcoins() ? 5 : 50;
-        int susMultiplier = this.getTargetPlayer().usedBitcoins() ? 2 : (int)(Math.random() * 50 + 20);
+        int susMultiplier = this.getTargetPlayer().usedBitcoins() ? 3 : (int)(Math.random() * 50 + 20);
 
         this.getTargetPlayer().changeRiskChance((int) (Math.random() * bitcoinMultiplier));
         this.getTargetPlayer().changeSus(susMultiplier);

@@ -1,7 +1,7 @@
 package objects.items;
 
 import objects.programs.Jgrasp;
-import objects.programs.Programs;
+//import objects.programs.Programs;
 import gameNav.Player;
 
 /**
@@ -28,6 +28,7 @@ public class RainbowTable extends Items
      * Postcondition: If this is jgrasp, set this to consumable.
      * Postcondition: Set jgrasp module for having an hash algorithm to true.
      * Postcondition: Jgrasp throws a bug
+     * Postcondition: Increases risk chance and sus
      */
     public void use()
     {
@@ -38,6 +39,9 @@ public class RainbowTable extends Items
 
             System.out.println("You input the rainbow table algorithm into jgrasp.");
             System.out.println("It seems to accept it..?");
+
+            this.getTargetPlayer().changeSus(5);
+            this.getTargetPlayer().changeRiskChance(10);
 
             currProg.hackerCheckoff(0);
             currProg.setBuggy(true);

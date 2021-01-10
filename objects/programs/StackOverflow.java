@@ -84,21 +84,13 @@ public class StackOverflow extends Programs
         String str = "Please solve the recaptcha and find the sum of the minimum and " +
         "maximum value of this array: [2, 3, 4, 5, 6, 7, 8, 9, 10]";
         System.out.println(str);
+        
+        String answer = this.getScanner().nextLine();
+        int sum = this.findMin(arr) + this.findMax(arr);
 
-        boolean fail = false;
+        boolean valid = answer.equals(sum + "");
 
-        try
-        {
-            int intNum = this.getScanner().nextInt();
-
-            fail = intNum != (this.findMin(arr) + this.findMax(arr));
-        }
-        catch(Exception err)
-        {
-            fail = true;
-        }
-
-        if (fail)
+        if (!valid)
         {
             System.out.println("The recaptcha has deemed that you are a robot as your answer is wrong.");
             System.out.println("Your post was rejected. Your battery was decreased.");
@@ -106,7 +98,7 @@ public class StackOverflow extends Programs
             this.getTargetPlayer().energyChange(-50);
         }
 
-        return !fail;
+        return valid;
     }
 
     /**
