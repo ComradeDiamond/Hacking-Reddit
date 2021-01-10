@@ -2,6 +2,7 @@ package objects.programs;
 import java.util.ArrayList;
 
 import gameNav.Player;
+import gameNav.ProgramList;
 import objects.items.*;
 import objects.lawsuits.*;
 
@@ -312,7 +313,7 @@ public class Discord extends Programs
      */
     public int suitCalc(int riskChance)
     {
-        if ((int)(Math.random() * 100) <= riskChance)
+        if ((int)(Math.random() * 100) <= (riskChance/2))
         {
             this.addLawsuit();
         }
@@ -360,6 +361,36 @@ public class Discord extends Programs
      */
     public void upload()
     {
+        if (this.getTargetPlayer().fetchProgram("AWS") == null)
+        {
+            System.out.println("Srs Bot is offline");
+            return;
+        }
 
+        Jgrasp jgrasp = (Jgrasp)ProgramList.fetchAuthority("Jgrasp");
+        
+        //JSDOM error actually doesn't make Jgrasp buggy b/c it's not a "bug" 
+        //and needed to progress to step 3
+        if (jgrasp.getBuggy())
+        {
+            System.out.println("Exit Process 3: Bot Crashed while executing");
+        }
+        else
+        {
+            //33% chance to yeet a bug
+            if ((int)(Math.random() * 3) == 2)
+            {
+                jgrasp.setBuggy(true);
+            }
+            else
+            {
+                try
+                {
+                    new ConsoleLog(this.getTargetPlayer()).addToInventory();
+                }
+                catch(Exception e)
+                {}
+            }
+        }
     }
 }

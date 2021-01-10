@@ -514,4 +514,13 @@ public class Player {
             this.programsOpen[i] = null;
         }
     }
+
+    /**
+     * Mutator method for this.win
+     * @param win The boolean to set this.win to
+     */
+    public void setWin(boolean win)
+    {
+        this.win = win;
+    }
 }

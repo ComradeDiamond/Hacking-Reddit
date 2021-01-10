@@ -21,6 +21,8 @@ public class Github extends Programs
      */
     private boolean[] legitEnding;
 
+    private String winType;
+
     /**
      * Constructs a github object
      * @param targetPlayer The main player inside the game
@@ -36,6 +38,8 @@ public class Github extends Programs
         //Uploaded all 3 items (return error log once this becomes true),
         //jsdom --> old reddit link
         legitEnding = new boolean[]{false, false, false};
+        
+        winType = "";
     }
 
     /**
@@ -82,5 +86,70 @@ public class Github extends Programs
         }
 
         return -1;
+    }
+
+    /**
+     * Transfers the hacker data of a console log to github.
+     * Precondition: other.length == 3
+     * Postcondition: hackerEnding array contains the reference to the same array
+     * Postcondition: If all array items are true, declare the player won and the victory type to be hacker
+     * @param other The other array to transfer data to hacker ending array
+     */
+    public void hackerDataTransfer(boolean[] other)
+    {
+        boolean allTrue = true;
+
+        for (int i=0; i<other.length; i++)
+        {
+            if (!other[i])
+            {
+                allTrue = false;
+            }
+
+            this.hackerEnding[i] = other[i];
+        }
+
+        if (allTrue)
+        {
+            this.winType = "Hacker";
+            this.getTargetPlayer().setWin(true);
+        }
+    }
+
+    /**
+     * Transfers the legit data of a console log to github.
+     * Precondition: other.length == 3
+     * Postcondition: legitEnding array contains the reference to the same array.
+     * Postcondition: If all the items in the array are true, declare that the player won and the win type to be legit
+     * @param other The other array to transfer data to legit ending array
+     */
+    public void legitDataTransfer(boolean[] other)
+    {
+        boolean allTrue = true;
+
+        for (int i=0; i<other.length; i++)
+        {
+            if (!other[i])
+            {
+                allTrue = false;
+            }
+
+            this.legitEnding[i] = other[i];
+        }
+
+        if (allTrue)
+        {
+            this.winType = "Legit";
+            this.getTargetPlayer().setWin(true);
+        }
+    }
+
+    /**
+     * Gets the name of the victory type!
+     * @return this.winType;
+     */
+    public String getWinType()
+    {
+        return this.winType;
     }
 }

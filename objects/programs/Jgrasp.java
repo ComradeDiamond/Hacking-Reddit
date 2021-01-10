@@ -118,7 +118,7 @@ public class Jgrasp extends Programs
     {
         if (this.jsdomException)
         {
-            System.out.println("Looks like you can't resolve the bug just by debugging");
+            System.out.println("Looks like you can't resolve the error just by debugging");
             return;
         }
 

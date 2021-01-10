@@ -26,7 +26,6 @@ public class ProgramList {
         ProgramList.programList = new Programs[] {
             new StackOverflow(targetPlayer),
             new Discord(targetPlayer),
-            new Grubhub(targetPlayer),
             new Reddit(targetPlayer),
             new SilkRoad(targetPlayer),
             new Jgrasp(targetPlayer),
