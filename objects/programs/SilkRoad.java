@@ -119,7 +119,7 @@ public class SilkRoad extends Programs
         System.out.println("Weirdly, people think you're an FBI agent investigating here!");
         System.out.println("Your risk of lawsuits drastically increased!");
         System.out.println("Your suspicion drastically increased!");
-        System.out.println("Your lawyers have been doxxed, and now their effectiveness rate has decline by 50%!");
+        System.out.println("Your lawyers have been doxxed, and now their effectiveness rate has decline by 50%!\n To be fair, they never existed in the first place.");
         System.out.println("All your github progress have been reversed!");
         System.out.println("Your bitcoin priveledges have now been revoked.\n");
 
