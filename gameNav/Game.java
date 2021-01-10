@@ -103,7 +103,8 @@ public class Game {
      * More specifically, this checks the energy, battery, discord riots, and lawsuits.
      * In the illegal ending, this also takes into account your sus.
      * This command also drains the batteries of the player by the # of programs open.
-     * Triggers game endings if something bad has happened
+     * Triggers game endings if something bad has happened.
+     * Postcondition: Lowers your risk by 1
      * @return True if player stats are enough to trigger a game loss
      * @throws Exception if any ending thing is not found
      */
@@ -136,6 +137,9 @@ public class Game {
             this.endingRisk();
             return true;
         }
+
+        //Lowers risk by 1. Yes, you can have negative risk because you'll need it
+        this.player.changeRiskChance(-1);
 
         //Check sus
         if (player.getSus() >= 100)

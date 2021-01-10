@@ -147,7 +147,8 @@ public class Discord extends Programs
 
         this.catEmote = new CatEmote(targetPlayer);
         this.itemArr = new Items[] {
-            new Donut(targetPlayer)
+            new Donut(targetPlayer),
+            new BTHSShirt(targetPlayer)
         };
 
         this.suitList = new ArrayList<Lawsuits>();

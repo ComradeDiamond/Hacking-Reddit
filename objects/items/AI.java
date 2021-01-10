@@ -17,7 +17,7 @@ public class AI extends Items
      */
     public AI(Player targetPlayer) throws Exception
     {
-        super("AI", targetPlayer);
+        super("AI", targetPlayer, true, 80);
     }
 
     /**

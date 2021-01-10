@@ -19,7 +19,7 @@ public class RiotShield extends Items
      */
     public RiotShield(Player targetPlayer) throws Exception
     {
-        super("Riot Shield", targetPlayer);
+        super("Riot Shield", targetPlayer, true, 200);
     }
 
     /**

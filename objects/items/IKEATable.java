@@ -17,6 +17,6 @@ public class IKEATable extends Items
      */
     public IKEATable(Player targetPlayer) throws Exception
     {
-        super("IKEA Table", targetPlayer, false);
+        super("IKEA Table", targetPlayer, false, 100);
     }
 }

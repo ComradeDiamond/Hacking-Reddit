@@ -18,7 +18,7 @@ public class Sunglasses extends Items
      */
     public Sunglasses(Player targetPlayer) throws Exception
     {
-        super("Sunglasses", targetPlayer, false);
+        super("Sunglasses", targetPlayer, false, 100);
     }
 
     /**
