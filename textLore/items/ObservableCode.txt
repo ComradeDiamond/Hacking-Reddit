@@ -1,0 +1,4 @@
+A manifesto of all reddit code observations.
+This holds the necessary code for Srs Bot to parse through reddit HTML and get the images.
+All you have to do is put it into an IDE.
+It's that ez you can even do it in DevTools
