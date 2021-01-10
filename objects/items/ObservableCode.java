@@ -29,6 +29,7 @@ public class ObservableCode extends Items
      * Postcondition: Checks off the first step to a legitamate Jgrasp ending
      * Postcondition: Jgrasp throws a huge exception. Player recieves an error log thingy, idk
      * Postcondition: Sets consumable to true
+     * Postcondition: Sets jgraspException in jgrasp to true
      */
     public void use()
     {
@@ -41,11 +42,23 @@ public class ObservableCode extends Items
 
             String str = "You took your sheet of compiled observable code and yeeted them into jgrasp.\n" +
             "Jgrasp magically understands what patterns to follow.\n" +
-            "It types in a bunch of HTML I don't understand.";
+            "It types in a bunch of HTML I don't understand.\n";
 
             System.out.println(str);
 
-            //Insert part where jgrasp throws a really big exception
+            //Insert stuff abt error log
+            System.out.println("-------Jgrasp Error Log----------");
+            System.out.println("ObservableException found in thread 'upload' java.lang.doesNotExistException\n    at objects.programs.Discord.java:2021\n     at base -1 of 3E");
+            System.out.println("---------------------------------");
+
+            try
+            {
+                new ErrorLog(this.getTargetPlayer()).addToInventory();
+            }
+            catch(Exception e)
+            {}
+
+            currProg.setJSDOMException(true);
         }
     }
 }

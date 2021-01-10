@@ -50,6 +50,11 @@ public class Jgrasp extends Programs
      * The boolean array to keep track of the legit ending
     **/
     private boolean[] legitEnding;
+
+    /**
+     * Returns whether the player has the error where they need JSDOM to proceed.
+     */
+    private boolean jsdomException;
     
     /**
      * Constructs a Jgrasp object
@@ -63,6 +68,7 @@ public class Jgrasp extends Programs
         this.exceptionIdx = -1;
         this.hackerEnding = new boolean[]{false, false, false, false};
         this.legitEnding = new boolean[]{false, false, false};
+        this.jsdomException = false;
     }
 
     /**
@@ -104,12 +110,21 @@ public class Jgrasp extends Programs
 
     /**
      * Observes jgrasp. Hey, there is a slight chance you'll be able to fix a bug!
+     * Precondition: Jgrasp does not have a JSDOM exception or else it won't be able to be resolved
+     * Precondition: Weirdly, for Jgrasp to work properly in Jgrasp, Jgrasp needs to have a bug!
      * Postcondition: Once in a blue moon, this resolves a bug
      */
     public void observe()
     {
+        if (this.jsdomException)
+        {
+            System.out.println("Looks like you can't resolve the bug just by debugging");
+            return;
+        }
+
         if (this.buggy)
         {
+
             System.out.println("Debugging.....");
             //10% chance of resolving bug... because that's us in class lol
             if ((int)(Math.random() * 10) == 2)
@@ -133,7 +148,9 @@ public class Jgrasp extends Programs
      * If there is an exception idx that's not -1, use it. If not, roll one.
      * Is it weird that throwException does not throw an exception?
      * Will I get points off this project if Folwell sees an exception?
-     * I dunno
+     * I dunno.
+     * Postcondition: Throws an exception and/or sets a custom exceptionIdx if it is not -1
+     * Postcondition: May throw custom exceptions
      */
     public void throwException()
     {
@@ -199,5 +216,52 @@ public class Jgrasp extends Programs
         {
             other[i] = this.legitEnding[i];
         }
+    }
+
+    /**
+     * Returns the progress for the hacker ending
+     * @return The last index in the hacker ending array where the item is true. If all of them are false, return -1
+     */
+    public int getHackerProg()
+    {
+        int truthIdx = -1;
+
+        for (int i=0; i<this.hackerEnding.length; i++)
+        {
+            if (this.hackerEnding[i])
+            {
+                truthIdx = i;
+            }
+        }
+
+        return truthIdx;
+    }
+
+    /**
+     * Returns the progress for the legit ending
+     * @return The last index in the legit ending array where the item is true. If all of them are false, return -1
+     */
+    public int getLegitProg()
+    {
+        int truthIdx = -1;
+
+        for (int i=0; i<this.legitEnding.length; i++)
+        {
+            if (this.legitEnding[i])
+            {
+                truthIdx = i;
+            }
+        }
+
+        return truthIdx;
+    }
+
+    /**
+     * Sets the jsdom exception attribute
+     * @param jsdomException The boolean to set jsdomException attribute to
+     */
+    public void setJSDOMException(boolean jsdomException)
+    {
+        this.jsdomException = jsdomException;
     }
 }
