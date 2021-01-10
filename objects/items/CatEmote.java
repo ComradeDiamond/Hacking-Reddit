@@ -1,6 +1,7 @@
 package objects.items;
 
 import gameNav.Player;
+import objects.programs.Discord;
 
 /**
  * Cat emote - used to trigger cat's convo with you.
@@ -34,6 +35,7 @@ public class CatEmote extends Items
      * If successful, the player gets a rainbow table.
      * If not, Cat calls you illegal
      * Postcondition: This item is taken out of the player's inventory.
+     * Postcondition: Used Cat Emote set to true
      */
     public void use()
     {
@@ -64,6 +66,7 @@ public class CatEmote extends Items
 
             System.out.println(txt);
             this.rainbowTable.addToInventory();
+            ((Discord)this.getTargetPlayer().getCurrentProgram()).setUsedCatEmote(true);
 
             //Allows the cat emote to finally be consumed
             this.setConsumable(true);

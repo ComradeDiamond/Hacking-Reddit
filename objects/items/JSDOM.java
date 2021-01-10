@@ -43,6 +43,7 @@ public class JSDOM extends Items
             System.out.println("You imported the entire 50GB JSDOM library into the IDE.");
             System.out.println("Magically, it allows you to fetch the structures of the web pages!");
             System.out.println("Seems like this and observable code might be getting somewhere.\n");
+            currProg.setJSDOMException(false);
 
             currProg.setBuggy(true);
             System.out.println("uhhhhhhhhhhhhhh maybe not");

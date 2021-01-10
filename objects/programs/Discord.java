@@ -174,6 +174,11 @@ public class Discord extends Programs
         this.riotPhase = phase;
     }
 
+    public void setUsedCatEmote(boolean usedCatEmote)
+    {
+        this.usedCatEmote = usedCatEmote;
+    }
+
     /**
      * Will print out a random discord finding. 
      * If you have any standing lawsuits, you'll always observe those first and get to challenge or resolve them
