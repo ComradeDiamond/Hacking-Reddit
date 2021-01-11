@@ -2,6 +2,8 @@ package objects.programs;
 
 import gameNav.Player;
 import gameNav.ProgramList;
+import objects.items.FolwellFix;
+import objects.items.PasswordCracker;
 
 /**
  * The go to hub for everything dark net.
@@ -30,9 +32,59 @@ public class BTHSDataArchive extends Programs
     };
 
     /**
+     * A bunch of links returned to the player if they decided to fetch in data archive without asking for Folwell's powerpoints.
+     * This also gets returned if you ask for a folwell powerpoint but not password project 3.
+     * These links are all stolen from an open sourced github repo lmao.
+     * @see https://csgordon.github.io/books.html 
+     */
+    private static String[] links = {
+        "http://www.cis.upenn.edu/~bcpierce/sf/",
+        "http://www.cs.cmu.edu/~rwh/plbook/",
+        "http://www.cse.chalmers.se/research/group/logic/book/",
+        "http://www.paultaylor.eu/stable/Proofs+Types.html",
+        "http://www.paultaylor.eu/~pt/prafm/",
+        "http://www.cs.brown.edu/~sk/Publications/Books/ProgLangs/",
+        "http://www.daimi.au.dk/~bra8130/Wiley_book/wiley.html",
+        "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.17.7385",
+        "http://www.cs.kent.ac.uk/people/staff/sjt/TTFP/",
+        "http://adam.chlipala.net/cpdt/",
+        "http://www21.in.tum.de/~nipkow/LNCS2283/",
+        "http://www.usingcsp.com/",
+        "http://www.cs.cmu.edu/~jcr/craftprog.html",
+         "http://people.cis.ksu.edu/~schmidt/text/densem.html",
+        "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.26.4391",
+        "http://www.cs.ru.nl/~henk/book.pdf",
+        "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.56.7045",
+        "http://www.cs.ox.ac.uk/publications/books/PfS/",
+        "http://www.usingz.com/",
+        "http://homotopytypetheory.org/book/",
+        "http://www.itu.dk/~sestoft/pebook/",
+        "http://www.nuprl.org/book/",
+        "http://intuitionistic.files.wordpress.com/2010/07/martin-lof-tt.pdf",
+        "http://www21.in.tum.de/~nipkow/Concrete-Semantics",
+        "http://www602.math.ryukoku.ac.jp/~nakano/papers/index.html",
+        "http://research.microsoft.com/en-us/um/people/lamport/tla/book.html",
+        "http://cristal.inria.fr/attapl/",
+        "http://cs.au.dk/~amoeller/spa/",
+        "http://pl.cs.jhu.edu/pl/book/index.shtml",
+        "https://manu.sridharan.net/files/aliasAnalysisChapter.pdf",
+        "https://yanniss.github.io/points-to-tutorial15.pdf",
+        "http://tata.gforge.inria.fr/",
+        "http://www.wisdom.weizmann.ac.il/~harel/reactive_systems.html",
+        "https://www.cs.princeton.edu/~appel/papers/plcc.pdf",
+        "http://www.lix.polytechnique.fr/Labo/Samuel.Mimram/teaching/INF551/course.pdf",
+        "https://www.cambridge.org/core/books/foundations-o…stic-programming/819623B1B5B33836476618AC0621F0EE"
+    };
+
+    /**
      * Whether or not the player has heard about folwell replit.
      */
     private boolean heardReplit;
+
+    /**
+     * Whether or not the player has gotten the Password Cracker
+     */
+    private boolean gotPasswordCracker;
 
     /**
      * Whether or not the player recieved Folwell's code.
@@ -91,11 +143,6 @@ public class BTHSDataArchive extends Programs
             break;
 
             case 1:
-                str = "Turns out brute forcing hash codes isn't the smartest thing to do...\n"+
-                "Or you're just not doing it correctly. Have you tried folwell repl.it?";
-            break;
-
-            case 2:
                 if (this.heardReplit && !this.gotFolwellCode)
                 {
                     this.replitRedirect();
@@ -103,9 +150,16 @@ public class BTHSDataArchive extends Programs
                 }
                 else
                 {
-                    str = "Now that you have control over reddit... you'll need to change a few things.\n"+
-                    "But you're still not getting access to the web without an API key.";
+                    str = "Turns out brute forcing hash codes isn't the smartest thing to do...\n"+
+                    "Or you're just not doing it correctly. Have you tried folwell repl.it?";
+
+                    this.heardReplit = true;
                 }
+            break;
+
+            case 2:
+                str = "Now that you have control over reddit... you'll need to change a few things.\n"+
+                "But you're still not getting access to the web without an API key.";
             break;
 
             default:
@@ -124,17 +178,69 @@ public class BTHSDataArchive extends Programs
      */
     public void upload()
     {
-        
+        System.out.print("Please enter OSIS: ");
+        String osis = this.getScanner().nextLine();
+
+        if (osis.length() == 9)
+        {
+            System.out.println("Please enter a teacher's data files to access:");
+            String teacher = this.getScanner().nextLine();
+
+            System.out.println("Please enter a lesson to view:");
+            String lesson = this.getScanner().nextLine().toLowerCase();
+
+            if (teacher.equalsIgnoreCase("Folwell") && lesson.contains("password project") && lesson.contains("3"))
+            {
+                System.out.println("You pilfered through the famous Password Project 3, and sure enough, you found something!");
+                System.out.println("It looks a bit 'brute forcy'");
+
+                try
+                {
+                    if (this.gotPasswordCracker)
+                    {
+                        System.out.println("But it seems you already have it.");
+                    }
+                    else
+                    {
+                        new PasswordCracker(this.getTargetPlayer()).addToInventory();
+                        this.gotPasswordCracker = true;
+                    }
+                }
+                catch(Exception e){}
+            }
+            else
+            {
+                System.out.print("File fetched: ");
+                System.out.println(BTHSDataArchive.links[(int)(Math.random() * BTHSDataArchive.links.length)]);
+            }
+        }
+        else
+        {
+            System.out.println("Invalid OSIS.");
+        }
     }
     
     /**
      * A process that redirects the user to Folwell's repl.it and Folwell's replit code.
      * Precondition: The user solves all of the recaptchas.
+     * Precondition: User inventory is NOT FULL
      * Postcondition: Assuming they solve the recaptcha, the user gets Folwell's code to copy and paste
      */
     private void replitRedirect()
     {
         System.out.println("Redirecting to repl.it.....");
+        if (recaptcha())
+        {
+            System.out.println("You entered the replit.");
+            System.out.println("Code successfully copied and forked!");
+
+            try
+            {
+                new FolwellFix(this.getTargetPlayer()).addToInventory();
+                this.gotFolwellCode = true;
+            }
+            catch(Exception e){}
+        }
     }
 
     /**
