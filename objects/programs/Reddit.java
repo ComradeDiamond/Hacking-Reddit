@@ -24,13 +24,18 @@ public class Reddit extends Programs
     private Items[] redditAwards;
 
     /**
+     * Reddit store items that could be obtained
+     */
+    private Items[] redditStoreItems;
+
+    /**
      * Keeps track of whether or not you posted in r/Christmas
      */
     private boolean postedChristmas;
 
     /**
      * Constructs a reddit object, or basically the reddit app you're going to use
-     * Postcondition: Initialized redditArr
+     * Postcondition: Initialized redditArr, redditAwards, and redditStoreItems
      * @param targetPlayer The target *snore* player inside the *snore* main game. 
         * How many times are we copying and pasting this?
      * @throws Exception if Reddit.txt does not exist
@@ -79,6 +84,10 @@ public class Reddit extends Programs
             new Upvote(targetPlayer),
             new SilverAward(targetPlayer),
             new GoldAward(targetPlayer)
+        };
+
+        this.redditStoreItems = new Items[] {
+            new Donut(targetPlayer)
         };
 
         this.postedChristmas = false;
@@ -212,13 +221,45 @@ public class Reddit extends Programs
 
     /**
      * Buy command - allows you to buy a random reddit item.
+     * The reddit items are a few things that could be awarded via comments.
+     * The trick is the user won't know the cost of the items if they buy it this way because these are good items.
      * Precondition: TargetPlayer money is >= the item cost
      * Precondition: Your inventory is not full
      * Postcondition: The item is added to your inventory.
-     * Postcondition: Your risk stat increases by 5
+     * Postcondition: Your risk stat increases by 3
+     * @see SilkRoad.prototype.shop() because they're the same thing
      */
-    public void shop()
+    public void shop(String itemName)
     {
-        
+        Items requestedItem = null;
+
+        for (Items item : this.redditStoreItems)
+        {
+            if (item.getName().equalsIgnoreCase(itemName))
+            {
+                requestedItem = item;
+                break;
+            }
+        }
+
+        //If item does not exist, yell at the player
+        if (requestedItem == null)
+        {
+            System.out.println("The item does not exist...");
+            return;
+        }
+
+        //If the player is broke, yell at the player
+        if (this.getTargetPlayer().getMoney() < requestedItem.getCost())
+        {
+            System.out.println("You don't have sufficient cash.");
+            return;
+        }
+
+        System.out.println("Purchased!");
+        requestedItem.addToInventory();
+        this.getTargetPlayer().moneyChange(-1 * requestedItem.getCost());
+
+        this.getTargetPlayer().changeSus(3);
     }
 }
