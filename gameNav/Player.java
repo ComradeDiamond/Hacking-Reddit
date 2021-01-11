@@ -57,6 +57,11 @@ public class Player {
     private boolean secureShopping;
 
     /**
+     * Reference to the empty program that will be thrown when methods are called on a program with nothing.
+     */
+    private Empty emptyProgram;
+
+    /**
      * Constructs a typical player that the user can play games with
      * @return new player object
      */
@@ -70,6 +75,12 @@ public class Player {
         this.currentProgram = null;
         this.programsOpen = new Programs[] {null, null, null, null, null, null, null, null};
         this.win = false;
+
+        try
+        {
+            this.emptyProgram = new Empty(this);
+        }
+        catch(Exception e){}
     }
 
     /**
@@ -380,6 +391,11 @@ public class Player {
      */
     public Programs getCurrentProgram()
     {
+        if (this.currentProgram == null)
+        {
+            return this.emptyProgram;
+        }
+        
         return this.currentProgram;
     }
 

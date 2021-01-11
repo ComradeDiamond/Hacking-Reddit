@@ -46,7 +46,7 @@ public class PrivateKey extends Items
      * It's a bit repetitive but I didn't want to make more classes.
      * Precondition: The player has reddit open.
      * Precondition: The player has 1 inventory slot open.
-     * Postcondition: Player's sus increases by 3
+     * Postcondition: Player's risk increases by 1.
      * Postcondition: If the user changes the Robot.txt's age to <18 for an API, user applys for an API and gets an API key.
      * Postcondition: If the player changes Robot.txt age to <18, this is set to consuamble.
      */
@@ -133,7 +133,7 @@ public class PrivateKey extends Items
                 break;
             }
 
-            this.getTargetPlayer().changeSus(3);
+            this.getTargetPlayer().changeSus(1);
         }
     }
 }
