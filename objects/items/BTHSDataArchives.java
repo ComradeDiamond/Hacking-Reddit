@@ -21,7 +21,7 @@ public class BTHSDataArchives extends Items
      */
     public BTHSDataArchives(Player targetPlayer) throws Exception
     {
-        super("BTHS Data Archives", targetPlayer);
+        super("BTHS Data Archives", targetPlayer, true, 80);
     }
 
     /**

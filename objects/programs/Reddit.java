@@ -173,9 +173,9 @@ public class Reddit extends Programs
         }
         else if (txt.toLowerCase().contains("rainbow table") && this.getTargetPlayer().fetchItem("Rainbow Table") != null)
         {
-            System.out.println("u/AnonymousWhale: \"Hey, do you kind if I take a look at the rainbow table? It looks interesting. \"");
+            System.out.println("u/AnonymousWhale: \"Hey, do you mind if I take a look at the rainbow table? It looks interesting. \"");
 
-            if (this.getScanner().nextLine().equalsIgnoreCase("yes"))
+            if (this.getScanner().nextLine().equalsIgnoreCase("no"))
             {
                 String toOut = "u/AnonymousWhale: \"Hmm... this looks quite... fake.\n"+
                 "You haven't been around here much, have you?\"";
@@ -232,7 +232,7 @@ public class Reddit extends Programs
      * Postcondition: Your risk stat increases by 3
      * @see SilkRoad.prototype.shop() because they're the same thing
      */
-    public void shop(String itemName)
+    public void buy(String itemName)
     {
         Items requestedItem = null;
 
