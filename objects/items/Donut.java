@@ -17,7 +17,7 @@ public class Donut extends Items
      */
     public Donut(Player targetPlayer) throws Exception
     {
-        super("Donut", targetPlayer);
+        super("Donut", targetPlayer, true, 5);
     }
 
     /**

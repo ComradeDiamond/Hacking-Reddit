@@ -83,11 +83,12 @@ public class Reddit extends Programs
         this.redditAwards = new Items[] {
             new Upvote(targetPlayer),
             new SilverAward(targetPlayer),
-            new GoldAward(targetPlayer)
+            new GoldAward(targetPlayer),
         };
 
         this.redditStoreItems = new Items[] {
-            new Donut(targetPlayer)
+            new Donut(targetPlayer),
+            new OldRedditLink(targetPlayer)
         };
 
         this.postedChristmas = false;
@@ -166,6 +167,8 @@ public class Reddit extends Programs
             {
                 this.postedChristmas = true;
                 System.out.println("u/ChristmasMod: \"Hey, welcome to the Christmas subreddit! I would guide you through but it seems you're *familiar* with the place already!\"");
+                System.out.println("Speaking of new, have you heard this subreddit is now compatible with the old reddit?");
+                System.out.println("All you have to do is buy a Old Reddit Link from the reddit store for $100!");
             }
         }
         else if (txt.toLowerCase().contains("rainbow table") && this.getTargetPlayer().fetchItem("Rainbow Table") != null)
@@ -260,6 +263,6 @@ public class Reddit extends Programs
         requestedItem.addToInventory();
         this.getTargetPlayer().moneyChange(-1 * requestedItem.getCost());
 
-        this.getTargetPlayer().changeSus(3);
+        this.getTargetPlayer().changeRiskChance(3);
     }
 }

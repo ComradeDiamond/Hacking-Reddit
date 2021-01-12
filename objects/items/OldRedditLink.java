@@ -19,7 +19,7 @@ public class OldRedditLink extends Items
      */
     public OldRedditLink(Player targetPlayer) throws Exception
     {
-        super("Old Reddit Link", targetPlayer, false);
+        super("Old Reddit Link", targetPlayer, false, 100);
     }
 
     /**

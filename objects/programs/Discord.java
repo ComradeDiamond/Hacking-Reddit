@@ -192,7 +192,8 @@ public class Discord extends Programs
      * If you have any standing lawsuits, you'll always observe those first and get to challenge or resolve them
      * Otherwise, you have a 10% chance to get something, 10% to get a cat emote, and a 10% chance
         to get a random wacky message.
-     * Postcondition: Lawsuit gets removed from suitList if successfully challenged or removed
+     * Postcondition: Lawsuit gets removed from suitList if successfully challenged or removed.
+     * Postcondition: Settling a lawsuit will drain energy by 10
      */
     public void observe()
     {
@@ -216,6 +217,8 @@ public class Discord extends Programs
                         {
                             this.suitList.remove(0);
                         }
+                        this.getTargetPlayer().energyChange(-10);
+                        this.getTargetPlayer().moneyChange(-5);
                     }
                 break;
 
@@ -229,6 +232,7 @@ public class Discord extends Programs
                         this.getTargetPlayer().moneyChange(-10);
                         this.suitList.get(0).settle();
                         this.suitList.remove(0);
+                        this.getTargetPlayer().energyChange(-10);
                     }
                 break;
 
@@ -236,7 +240,6 @@ public class Discord extends Programs
                     System.out.println("... that was not an option");
                 break;
             }
-
             return;
         }
 
