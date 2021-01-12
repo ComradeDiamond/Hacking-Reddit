@@ -1,9 +1,6 @@
 package objects.items;
 
 import gameNav.Player;
-import objects.items.ObservableNote1;
-import objects.items.ObservableNote2;
-import objects.items.ObservableNote3;
 
 /**
  * DevTool item.
@@ -18,7 +15,38 @@ public class DevTool extends Items
      * A huge string of trimmed down public reddit HTML.
      * This is completely fake btw.
      */
-    private static String redditCode;
+    private static String redditCode = ""+
+    "<!DOCTYPE HTML in r/Christmas>\n" +
+    "   <div class='abdu2323h2yty wegwyt23 huywe3i34'>\n" +
+    "       <div id='Christmas Post 1' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "       <div id='Christmas Post 3' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "       <div id='Christmas Post 4' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "       <div id='Christmas Post 5' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "       <div id='Christmas Post 6' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "       <div id='Christmas Post 15' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "       <div id='Christmas Post 12' class='ehfuwehf3 Post'>\n" +
+    "           <div className='3423423 PostTitle Modal342 tyy3g2y3t2y2tbj'></div>\n" +
+    "           <img class='image' class='i4h3gyuu21' /> \n" +
+    "       </div>\n"+
+    "   </div>";
 
     /**
      * A reference for an observable note 1 object

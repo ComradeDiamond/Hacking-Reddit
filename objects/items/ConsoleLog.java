@@ -57,4 +57,38 @@ public class ConsoleLog extends Items
             System.out.println("anddd you just wasted a console log");
         }
     }
+
+    /**
+     * Returns the current phase of the hacker ending array
+     * @return The last index in the hacker array where there is a true, or -1 if they're all false.
+     */
+    public int hackerIdx()
+    {
+        for (int i=this.hackerCheckoff.length - 1; i >=0; i--)
+        {
+            if (hackerCheckoff[i])
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * Returns the current phase of the legit ending array
+     * @return The last index in the legit array where there is a true, or -1 if all false
+     */
+    public int legitIdx()
+    {
+        for (int i=this.normalCheckoff.length - 1; i>=0; i--)
+        {
+            if (normalCheckoff[i])
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

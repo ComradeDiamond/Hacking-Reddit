@@ -135,8 +135,13 @@ public class Discord extends Programs
     private ArrayList<Lawsuits> suitList;
 
     /**
+     * Whether the player obtained the private key from Discord.
+     */
+    private boolean pvg;
+
+    /**
      * Constructs a discord program.
-     * PostCondition: Sets the riotPhase to 0, usedCatEmote to false, inits catEmote and itemArr
+     * PostCondition: Sets the riotPhase to 0, usedCatEmote to false, inits all attributes
      * @param targetPlayer The main punique player initialized in the game
      * @throws Exception if Discord.txt does not exist or if CatEmote.txt does not exist
      */
@@ -153,6 +158,7 @@ public class Discord extends Programs
         };
 
         this.suitList = new ArrayList<Lawsuits>();
+        this.pvg = false;
     }
 
     /**
@@ -358,6 +364,7 @@ public class Discord extends Programs
      * This is where you will test the code and recieve a console log.
      * Precondition: Target player's inventory is not full, and has a spot of null open
      * Postcondition: A console log is added to your inventory.
+     * Postcondition: Changes this.pvg if the user already has the private key
      */
     public void upload()
     {
@@ -386,7 +393,41 @@ public class Discord extends Programs
             {
                 try
                 {
-                    new ConsoleLog(this.getTargetPlayer()).addToInventory();
+                    ConsoleLog log = new ConsoleLog(this.getTargetPlayer());
+                    String str = "";
+
+                    //If everything works
+                    if (log.hackerIdx() == 3 || log.legitIdx() == 2)
+                    {
+                        str = "----------r/Christmas post!--------------\n"+
+                        "It's christmas and I just made some hot chocolate!\n" +
+                        "\n"+
+                        "u                      w                       u";
+                    }
+                    else if (log.hackerIdx() == 2 && !this.pvg)
+                    {
+                        str = "You ran Srs Bot. Surprisingly, the bot is taking a bit long.\n" +
+                        "Brute forcing.... 5%\n"+
+                        "Brute forcing.... 46%\n"+
+                        "Brute forcing.... 89%\n"+
+                        "Brute forcing.... 99%\n"+
+                        "Done.";
+
+                        new PrivateKey(this.getTargetPlayer()).addToInventory();
+                        this.pvg = true;
+                    }
+                    else if (log.legitIdx() == 1)
+                    {
+                        str = "You ran Srs Bot. Despite JSDOM being used. Nothing is loading.\n" +
+                        "You might have to find a version of reddit without lazyloaders it seems.";
+                    }
+                    else
+                    {
+                        str = "You ran Srs Bot. The results come out in a console log.";
+                    }
+
+                    System.out.println(str);
+                    log.addToInventory();
                 }
                 catch(Exception e)
                 {}

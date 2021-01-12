@@ -1,6 +1,7 @@
 package objects.programs;
 
 import gameNav.Player;
+import objects.items.ObservableCode;
 import objects.items.RainbowTable;
 
 /**
@@ -65,7 +66,8 @@ public class Minecraft extends Programs
 
     /**
      * If the user has the materials for a rainbow table, you are able to craft the rainbow table here
-     * Postcondition: Adds a rainbow table to the player's inventory if they are able to craft it
+     * Postcondition: Adds a rainbow table to the player's inventory if they are able to craft it.
+     * Postcondition: Adds a observable note to the player's inventory if they can craft it
      */
     public void upload()
     {
@@ -87,17 +89,32 @@ public class Minecraft extends Programs
                 catch(Exception e){}
                 String str = "I have a rainbow\nI have a table\n... A RAINBOW TABLE!";
                 System.out.println(str);
-            }
-            else
-            {
-                System.out.println("It seems like you don't have the ability to craft anything");
+                return;
             }
         }
-        else
+
+        boolean hasNote1 = this.getTargetPlayer().fetchItem("Observable Note 1") != null;
+        boolean hasNote2 = this.getTargetPlayer().fetchItem("Observable Note 2") != null;
+        boolean hasNote3 = this.getTargetPlayer().fetchItem("Observable Note 3") != null;
+
+        if (hasNote1 && hasNote2 && hasNote3)
         {
-            System.out.println("Hmm seems like there's nothing to craft here.");
-            System.out.println("But hey, would you like some BTD6 drip?");
+            this.getTargetPlayer().removeInvItem("Observable Note 1");
+            this.getTargetPlayer().removeInvItem("Observable Note 2");
+            this.getTargetPlayer().removeInvItem("Observable Note 3");
+
+            try
+            {
+                new ObservableCode(this.getTargetPlayer()).addToInventory();
+            }
+            catch(Exception e){}
+
+            System.out.println("Looking at all 3 notes, it seems you have the items you need to combine and weaponize them.");
+            System.out.println("Use it well");
         }
+
+        System.out.println("It seems like you don't have the ability to craft anything");
+        System.out.println("But hey, would you like some BTD6 drip?");
     }
 
     /**
