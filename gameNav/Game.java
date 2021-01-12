@@ -88,6 +88,7 @@ public class Game {
 
         if (this.player.getWin())
         {
+            this.endingVictory(this.player.getWinType());
             System.out.println("FINAL RESULT: VICTORY");
             return;
         }
@@ -258,5 +259,16 @@ public class Game {
     private void endingRisk() throws Exception
     {
         this.lineByLine("Lawsuit");
+    }
+
+    /**
+     * Prints the ending victory.
+     * Precondition: victoryType is an existing victory type name
+     * @param victoryType The string of the name of the victory type
+     * @throws Exception if <victoryType>.txt does not exist
+     */
+    private void endingVictory(String victoryType) throws Exception
+    {
+        this.lineByLine(victoryType);
     }
 }

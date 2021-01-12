@@ -1,6 +1,7 @@
 package objects.programs;
 
 import gameNav.Player;
+import objects.items.RainbowTable;
 
 /**
  * Minecraft is a game where you sit there and observe stuff going on and hope not to get blown up.
@@ -64,12 +65,33 @@ public class Minecraft extends Programs
 
     /**
      * If the user has the materials for a rainbow table, you are able to craft the rainbow table here
+     * Postcondition: Adds a rainbow table to the player's inventory if they are able to craft it
      */
     public void upload()
     {
         if (this.rainbowUnlock)
         {
-            //If have all 3 items, unlock rainbow table
+            //If have a rainbow and a table, unlock rainbow table
+            boolean haveRainbow = this.getTargetPlayer().fetchItem("Rainbow Dash") != null;
+            boolean haveTable = this.getTargetPlayer().fetchItem("IKEA Table") != null;
+
+            if (haveRainbow && haveTable)
+            {
+                this.getTargetPlayer().removeInvItem("Rainbow Dash");
+                this.getTargetPlayer().removeInvItem("IKEA Table");
+
+                try
+                {
+                    new RainbowTable(this.getTargetPlayer()).addToInventory();
+                }
+                catch(Exception e){}
+                String str = "I have a rainbow\nI have a table\n... A RAINBOW TABLE!";
+                System.out.println(str);
+            }
+            else
+            {
+                System.out.println("It seems like you don't have the ability to craft anything");
+            }
         }
         else
         {

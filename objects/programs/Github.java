@@ -21,8 +21,6 @@ public class Github extends Programs
      */
     private boolean[] legitEnding;
 
-    private String winType;
-
     /**
      * Constructs a github object
      * @param targetPlayer The main player inside the game
@@ -38,8 +36,6 @@ public class Github extends Programs
         //Uploaded all 3 items (return error log once this becomes true),
         //jsdom --> old reddit link
         legitEnding = new boolean[]{false, false, false};
-        
-        winType = "";
     }
 
     /**
@@ -111,7 +107,7 @@ public class Github extends Programs
 
         if (allTrue)
         {
-            this.winType = "Hacker";
+            this.getTargetPlayer().setWinType("Hacker");;
             this.getTargetPlayer().setWin(true);
         }
     }
@@ -139,17 +135,8 @@ public class Github extends Programs
 
         if (allTrue)
         {
-            this.winType = "Legit";
+            this.getTargetPlayer().setWinType("Legit");;
             this.getTargetPlayer().setWin(true);
         }
-    }
-
-    /**
-     * Gets the name of the victory type!
-     * @return this.winType;
-     */
-    public String getWinType()
-    {
-        return this.winType;
     }
 }

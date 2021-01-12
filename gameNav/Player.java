@@ -52,6 +52,10 @@ public class Player {
      */
     private boolean win;
     /**
+     * The victory ending type
+     */
+    private String winType;
+    /**
      * It's relatively useless as of now... it just keeps track if you used bitcoins
      */
     private boolean secureShopping;
@@ -75,6 +79,7 @@ public class Player {
         this.currentProgram = null;
         this.programsOpen = new Programs[] {null, null, null, null, null, null, null, null};
         this.win = false;
+        this.winType = "";
 
         try
         {
@@ -99,6 +104,24 @@ public class Player {
     public int getBattery()
     {
         return this.battery;
+    }
+
+    /**
+     * Mutator method for this.winType.
+     * @param winType The string of the victory win type.
+     */
+    public void setWinType(String winType)
+    {
+        this.winType = winType;
+    }
+
+    /**
+     * Accessor method for the victory type.
+     * @return this.winType
+     */
+    public String getWinType()
+    {
+        return this.winType;
     }
 
     /**
