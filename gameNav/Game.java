@@ -56,6 +56,8 @@ public class Game {
         //Fulfill one requirement
         Useless useless = new Useless();
         useless.changeVariable();
+        System.out.println(useless);
+        System.out.println("-------------------------");
 
         this.doIntroduction();
         

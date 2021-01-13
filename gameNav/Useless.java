@@ -21,4 +21,13 @@ public class Useless
     {
         CommandWord.setUselessVariable(0);
     }
+
+    /**
+     * Converts this useless object into a printable string
+     * @return This item, stringified. This will print an object because Strings are objects.
+     */
+    public String toString()
+    {
+        return "Don't mind this, it's just a useless item: randomStaticVariable is null";
+    }
 }
