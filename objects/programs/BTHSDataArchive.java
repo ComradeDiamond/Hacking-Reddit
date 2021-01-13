@@ -257,7 +257,7 @@ public class BTHSDataArchive extends Programs
         System.out.println("What would index 3 of [1, 2, 3, 4, 5] be if the array is shifted 1 index to the right?");
 
         String output = this.getScanner().nextLine();
-        if (!output.equals(this.arrShiftRight(arr)[3] + ""))
+        if (!output.equalsIgnoreCase(this.arrShiftRight(arr)[3] + ""))
         {
             recaptchaCorrect = false;
         }
@@ -265,7 +265,7 @@ public class BTHSDataArchive extends Programs
         //P2
         System.out.println("What would index 2 of [1, 2, 3, 4, 5] be if the array was reversed?");
         output = this.getScanner().nextLine();
-        if (!output.equals(this.reverse(arr)[2] + ""))
+        if (!output.equalsIgnoreCase(this.reverse(arr)[2] + ""))
         {
             recaptchaCorrect = false;
         }
@@ -273,15 +273,16 @@ public class BTHSDataArchive extends Programs
         //P3
         System.out.println("True or false: [5, 4, 3, 2, 1] has duplicate elements");
         output = this.getScanner().nextLine();
-        if (!output.equals(this.hasDuplicate(arr) + ""))
+        if (!output.equalsIgnoreCase(this.hasDuplicate(arr) + ""))
         {
             recaptchaCorrect = false;
+            //Test and debug oi3
         }
 
         //P4
         System.out.println("How many numbers in [5, 4, 3, 2, 1] are even?");
         output = this.getScanner().nextLine();
-        if (!output.equals(this.findNumEven(arr) + ""))
+        if (!output.equalsIgnoreCase(this.findNumEven(arr) + ""))
         {
             recaptchaCorrect = false;
         }
@@ -347,7 +348,7 @@ public class BTHSDataArchive extends Programs
     {
         for (int i=0; i<arr.length - 1; i++)
         {
-            for (int c= i+1; c<arr.length; i++)
+            for (int c= i+1; c<arr.length; c++)
             {
                 if (arr[i] == arr[c])
                 {

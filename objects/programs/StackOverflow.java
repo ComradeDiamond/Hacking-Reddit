@@ -65,6 +65,7 @@ public class StackOverflow extends Programs
                 try
                 {
                     new DevTool(this.getTargetPlayer()).addToInventory();
+                    this.devToolGot = true;
                 }
                 catch(Exception e){}
                 return;

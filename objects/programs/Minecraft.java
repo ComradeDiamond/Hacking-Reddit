@@ -111,6 +111,7 @@ public class Minecraft extends Programs
 
             System.out.println("Looking at all 3 notes, it seems you have the items you need to combine and weaponize them.");
             System.out.println("Use it well");
+            return;
         }
 
         System.out.println("It seems like you don't have the ability to craft anything");

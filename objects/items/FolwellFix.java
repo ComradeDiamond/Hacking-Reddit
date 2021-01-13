@@ -18,7 +18,7 @@ public class FolwellFix extends Items
      */
     public FolwellFix(Player targetPlayer) throws Exception
     {
-        super("FollWell Fix", targetPlayer, false);
+        super("FolWell Fix", targetPlayer, false);
     }
 
     /**

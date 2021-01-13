@@ -48,7 +48,8 @@ public class ConsoleLog extends Items
         {
             Github currProg = (Github)this.getTargetPlayer().getCurrentProgram();
             currProg.hackerDataTransfer(this.hackerCheckoff);
-            currProg.legitDataTransfer(this.normalCheckoff);   
+            currProg.legitDataTransfer(this.normalCheckoff);  
+            System.out.println("Uploaded."); 
         }
         else
         {

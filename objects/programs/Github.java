@@ -67,13 +67,13 @@ public class Github extends Programs
      * Returns what progress phase the player is in regarding a route
      * @param isLegitEnding whether the array you're trying to view is the legit ending.
         * If false, this will be the hacker ending
-     * @return the first index in hackerEnding or legitEnding where a boolean is true. Returns -1 if all of them are false
+     * @return the last index in hackerEnding or legitEnding where a boolean is true. Returns -1 if all of them are false
      */
     public int getProgressStep(boolean isLegitEnding)
     {
         boolean[] tempArr = isLegitEnding ? this.legitEnding : this.hackerEnding;
 
-        for (int i=0; i<tempArr.length; i++)
+        for (int i=tempArr.length -1; i>=0; i--)
         {
             if (tempArr[i])
             {

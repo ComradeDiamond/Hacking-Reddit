@@ -57,7 +57,7 @@ public class ErrorLog extends Items
         }
         else
         {
-            this.getTargetPlayer().changeRiskChance(5);
+            this.getTargetPlayer().changeRiskChance(15);
             System.out.println("You can't use an error log here, but youe error log has attracted suspicion");
         }
     }

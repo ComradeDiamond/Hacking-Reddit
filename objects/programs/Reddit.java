@@ -168,8 +168,8 @@ public class Reddit extends Programs
             {
                 this.postedChristmas = true;
                 System.out.println("u/ChristmasMod: \"Hey, welcome to the Christmas subreddit! I would guide you through but it seems you're *familiar* with the place already!\"");
-                System.out.println("Speaking of new, have you heard this subreddit is now compatible with the old reddit?");
-                System.out.println("All you have to do is buy a Old Reddit Link from the reddit store for $100!");
+                System.out.println("\"Speaking of new, have you heard this subreddit is now compatible with the old reddit?\"");
+                System.out.println("\"All you have to do is buy a Old Reddit Link from the reddit store for $100!\"");
             }
         }
         else if (txt.toLowerCase().contains("rainbow table") && this.getTargetPlayer().fetchItem("Rainbow Table") != null)
@@ -197,14 +197,14 @@ public class Reddit extends Programs
                 ProgramList.fetchAuthority("Silk Road").setEnabled(true);
                 this.getTargetPlayer().removeInvItem("Rainbow Table");
 
-                //Handles the exception that comes with constructing a bitcoin object
+                //Smh Java forces you to inherit exceptions >:(
                 try 
                 {
                     new Bitcoin(this.getTargetPlayer()).addToInventory();
                 } 
                 catch (Exception e) 
                 {
-                    System.out.println("Something went wrong.... uh");
+                    //System.out.println("Something went wrong.... uh");
                 }
             }
         }

@@ -244,8 +244,9 @@ public class DevTool extends Items
 
         int[][] pairMatrix = new int[idx][];
 
-        for (int i=0; i<tempMatrix.length; i++)
+        for (int i=0; i<pairMatrix.length; i++)
         {
+            System.out.println("Statement Execution Count: Iterate " + i + " times!");
             pairMatrix[i] = tempMatrix[i];
         }
 
