@@ -17,7 +17,7 @@ public class POS extends Items
      */
     public POS(Player targetPlayer) throws Exception
     {
-        super("POS", targetPlayer);
+        super("POS", targetPlayer, true, 50);
     }
 
     /**

@@ -48,36 +48,36 @@ public class Reddit extends Programs
         //For now, we'll construct donuts until we know what to give the players
         //The harder it is to guess the keyword, the better the prize
         this.redditArr = new RedditPost[]{
-            new RedditPost("r/DreamWasTaken", this.generateUser(), "Dream did not cheat, and here's why!", "agree", new Donut(targetPlayer)),
-            new RedditPost("r/DreamWasTaken", this.generateUser(), "Dream on the way to win 10 lotteries in a row", "liar", new Donut(targetPlayer)),
+            new RedditPost("r/DreamWasTaken", this.generateUser(), "Dream did not cheat, and here's why!", "agree", new DreamWaterBottle(targetPlayer)),
+            new RedditPost("r/DreamWasTaken", this.generateUser(), "Dream on the way to win 10 lotteries in a row", "liar", new PigStep(targetPlayer)),
             new RedditPost("r/DreamWasTaken", this.generateUser(), "Made a new fan art for dream uwu Hope you guys like this", "nice", new Upvote(targetPlayer)),
             new RedditPost("r/DreamWasTaken", this.generateUser(), "This sub the past few days: \nDream cheated, dream didn't cheat, dream cheated, pls move on", "did not cheat", new Dream(targetPlayer)),
-            new RedditPost("r/DreamWasTaken", this.generateUser(), "BREAKING NEWS: DREAM'S ASTROPHYSICIST\nCONCLUDED THAT JAVA IS VERY BUGGY AND DREAM DID NOT CHEAT", "what", new Donut(targetPlayer)),
+            new RedditPost("r/DreamWasTaken", this.generateUser(), "BREAKING NEWS: DREAM'S ASTROPHYSICIST\nCONCLUDED THAT JAVA IS VERY BUGGY AND DREAM DID NOT CHEAT", "what", new Dream(targetPlayer)),
             new RedditPost("r/DreamWasTaken", this.generateUser(), "Antfrost this manhunt: You activated my trap card", "rigged", new Donut(targetPlayer)),
-            new RedditPost("r/DreamWasTaken", this.generateUser(), "Why is dream merch so expensive? He charges $50 for a water bottle", "cost", new Donut(targetPlayer)),
-            new RedditPost("r/DreamWasTaken", this.generateUser(), "r/statistics claim Dream's Astrophysicist PHD is fake!", "wrong", new Donut(targetPlayer)),
-            new RedditPost("r/Chrismas", this.generateUser(), "It has been a rough year, but we made it! Christmas tree!", "looks", new Donut(targetPlayer)),
-            new RedditPost("r/Christmas", this.generateUser(), "It's Christmas season! We're blasting Mariah Carey in the house!", "like", new Donut(targetPlayer)),
-            new RedditPost("r/Christmas", this.generateUser(), "Dream the dog under a log under a Christmas tree!", "cute", new Donut(targetPlayer)),
-            new RedditPost("r/Christmas", this.generateUser(), "I was alone for Christmas, but my coworker gave me alot of leftovers owo", "yum", new Donut(targetPlayer)),
-            new RedditPost("r/Christmas", this.generateUser(), "Today I had some fun time in the kitchen baking cookies and making cand canes!", "wow", new Donut(targetPlayer)),
-            new RedditPost("r/Christmas", this.generateUser(), "My little desk tree, since I'm too poor to afford a huge one", "good", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", this.generateUser(), "Rate my teachers this year please\nMclean, Smith, Lewis, Heinz, Carey", "bad", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", this.generateUser(), "Hey a 2025 here, I was wondering what is the BTHS cutoff last year.\nWill I make it in with a 498?", "no", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", this.generateUser(), "So guys I'm a bit undecided on majors next year. Is LAS a good major because I heard it's really big", "no", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", this.generateUser(), "QUESTIONSSSSS\nAre APs mandatory in Brooklyn Tech?", "yes", new Donut(targetPlayer)),
+            new RedditPost("r/DreamWasTaken", this.generateUser(), "Why is dream merch so expensive? He charges $50 for a water bottle", "cost", new DreamWaterBottle(targetPlayer)),
+            new RedditPost("r/DreamWasTaken", this.generateUser(), "r/statistics claim Dream's Astrophysicist PHD is fake!", "wrong", new BookOfDarkSecrets(targetPlayer)),
+            new RedditPost("r/Chrismas", this.generateUser(), "It has been a rough year, but we made it! Christmas tree!", "looks", new SilverAward(targetPlayer)),
+            new RedditPost("r/Christmas", this.generateUser(), "It's Christmas season! We're blasting Mariah Carey in the house!", "like", new Gatorade(targetPlayer)),
+            new RedditPost("r/Christmas", this.generateUser(), "Dream the dog under a log under a Christmas tree!", "cute", new JerryMagic(targetPlayer)),
+            new RedditPost("r/Christmas", this.generateUser(), "I was alone for Christmas, but my coworker gave me alot of leftovers owo", "yum", new Chocolate(targetPlayer)),
+            new RedditPost("r/Christmas", this.generateUser(), "Today I had some fun time in the kitchen baking cookies and making cand canes!", "wow", new JerryMagic(targetPlayer)),
+            new RedditPost("r/Christmas", this.generateUser(), "My little desk tree, since I'm too poor to afford a huge one", "good", new Chocolate(targetPlayer)),
+            new RedditPost("r/BTHS", this.generateUser(), "Rate my teachers this year please\nMclean, Smith, Lewis, Heinz, Carey", "bad", new BookOfDarkSecrets(targetPlayer)),
+            new RedditPost("r/BTHS", this.generateUser(), "Hey a 2025 here, I was wondering what is the BTHS cutoff last year.\nWill I make it in with a 498?", "no", new SGOSticker(targetPlayer)),
+            new RedditPost("r/BTHS", this.generateUser(), "So guys I'm a bit undecided on majors next year. Is LAS a good major because I heard it's really big", "no", new SGOSticker(targetPlayer)),
+            new RedditPost("r/BTHS", this.generateUser(), "QUESTIONSSSSS\nAre APs mandatory in Brooklyn Tech?", "yes", new Upvote(targetPlayer)),
             new RedditPost("r/BTHS", this.generateUser(), "Hi I'm a sophmore. What is the best major in BTHS?\n:( They gave us no major selection material", "software", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", "cheems12", "I made Brooklyn Tech 2077", "cool", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", this.generateUser(), "In light of the cancelation of Youtube Rewind 2020, I made BTHS Rewind 2020!", "lol", new Donut(targetPlayer)),
-            new RedditPost("r/BTHS", this.generateUser(), "I heard there are many rumors of majors. I'm about to select mine in a few months. What's the worst major out there?", "las", new Donut(targetPlayer)),
-            new RedditPost("r/Minecraft", this.generateUser(), "owo Axelots will spin on lily pads!", "cute", new Donut(targetPlayer)),
+            new RedditPost("r/BTHS", "cheems12", "I made Brooklyn Tech 2077", "cool", new POS(targetPlayer)),
+            new RedditPost("r/BTHS", this.generateUser(), "In light of the cancelation of Youtube Rewind 2020, I made BTHS Rewind 2020!", "lol", new BTHSShirt(targetPlayer)),
+            new RedditPost("r/BTHS", this.generateUser(), "I heard there are many rumors of majors. I'm about to select mine in a few months. What's the worst major out there?", "las", new JuryNullification(targetPlayer)),
+            new RedditPost("r/Minecraft", this.generateUser(), "owo Axelots will spin on lily pads!", "cute", new PigStep(targetPlayer)),
             new RedditPost("r/Minecraft", this.generateUser(), "I made a phantom out of paper! What do you think?", "scary", new Donut(targetPlayer)),
-            new RedditPost("r/Minecraft", this.generateUser(), "I just discovered bungee jumping! I love Minecraft physics!", "how", new Donut(targetPlayer)),
-            new RedditPost("r/Minecraft", this.generateUser(), "I 3D printed a glowstone block at light level 15!", "shiny", new Donut(targetPlayer)),
-            new RedditPost("r/Minecraft", this.generateUser(), "The plushies were sold out literally EVERYWHERE, and so my little sister didn’t get the bee she wanted for Christmas. I made her one by hand to cheer her up.", "nice", new Donut(targetPlayer)),
-            new RedditPost("r/Programming", this.generateUser(), "Syntax Error: missing ; at like 56", "bruh", new Donut(targetPlayer)),
-            new RedditPost("r/Programming", this.generateUser(), "Tired of your code not compiling? Just smash your computer!", "lol", new Donut(targetPlayer)),
-            new RedditPost("r/Programming", this.generateUser(), "The ins and outs of onion routing\nThis explains why if you use bitcoins and fakeIds, you become untraceable!", "wow", new Donut(targetPlayer))
+            new RedditPost("r/Minecraft", this.generateUser(), "I just discovered bungee jumping! I love Minecraft physics!", "how", new ElectricShock(targetPlayer)),
+            new RedditPost("r/Minecraft", this.generateUser(), "I 3D printed a glowstone block at light level 15!", "shiny", new ChargeMaster(targetPlayer)),
+            new RedditPost("r/Minecraft", this.generateUser(), "The plushies were sold out literally EVERYWHERE, and so my little sister didn’t get the bee she wanted for Christmas. I made her one by hand to cheer her up.", "nice", new Chocolate(targetPlayer)),
+            new RedditPost("r/Programming", this.generateUser(), "Syntax Error: missing ; at like 56", "bruh", new EmergencyUnlock(targetPlayer)),
+            new RedditPost("r/Programming", this.generateUser(), "Tired of your code not compiling? Just smash your computer!", "lol", new EmergencyUnlock(targetPlayer)),
+            new RedditPost("r/Programming", this.generateUser(), "The ins and outs of onion routing\nThis explains why if you use bitcoins and fakeIds, you become untraceable!", "wow", new ElectricShock(targetPlayer))
         };
 
         this.redditAwards = new Items[] {
@@ -89,7 +89,10 @@ public class Reddit extends Programs
         this.redditStoreItems = new Items[] {
             new Donut(targetPlayer),
             new OldRedditLink(targetPlayer),
-            new RainbowDash(targetPlayer)
+            new RainbowDash(targetPlayer),
+            new Flashdrive(targetPlayer),
+            new PigStep(targetPlayer),
+            new POS(targetPlayer)
         };
 
         this.postedChristmas = false;
