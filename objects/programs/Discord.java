@@ -79,7 +79,12 @@ public class Discord extends Programs
         "My 99s are gone 😢",
         "Oh no nitro expires in 3 days",
         "height redistribution is impossible you anthropomorphic animal puppet",
-        "we have to write an essay to apply for college?"
+        "we have to write an essay to apply for college?",
+        "Hmm maybe if we open jgrasp and aws and try to upload to srs bot here, we can find something useful to ask on stack overflow!",
+        "Hmm maybe if we open jgrasp and aws and try to upload to srs bot here, we can find something useful to ask on stack overflow!",
+        "Hmm maybe if we open jgrasp and aws and try to upload to srs bot here, we can find something useful to ask on stack overflow!",
+        "Hmm maybe if we open jgrasp and aws and try to upload to srs bot here, we can find something useful to ask on stack overflow!",
+        "I heard if you upload here, you can run Srs Bot here!"
     };
 
     private static String[] foundArr = new String[] {

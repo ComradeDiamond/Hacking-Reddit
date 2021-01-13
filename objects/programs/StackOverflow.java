@@ -70,6 +70,12 @@ public class StackOverflow extends Programs
                 catch(Exception e){}
                 return;
             }
+
+            //If only b3
+            if (b3)
+            {
+                System.out.println("You haven't discovered an issue yet... maybe search for one.");
+            }
         }
 
         if (((Jgrasp)ProgramList.fetchAuthority("Jgrasp")).getBuggy())

@@ -4,3 +4,5 @@ This is still the main site you're going to fetch the Christmas photos off of.
 That's a shame, because there's alot of drama and gossip going on if you strayed off task.
 Hey, if you can afford the batteries, sit down and watch the fun happen.
 You never know the chances of you finding something (he's very lucky).
+
+Well, before you can API the HTML, you need to find a way to get the HTML, right?
