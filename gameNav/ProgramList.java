@@ -31,7 +31,8 @@ public class ProgramList {
             new Jgrasp(targetPlayer),
             new AWS(targetPlayer),
             new Minecraft(targetPlayer),
-            new BTHSDataArchive(targetPlayer)
+            new BTHSDataArchive(targetPlayer),
+            new Github(targetPlayer)
         };
     }
 

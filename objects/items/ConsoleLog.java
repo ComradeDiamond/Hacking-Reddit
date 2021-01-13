@@ -25,7 +25,7 @@ public class ConsoleLog extends Items
     private boolean[] hackerCheckoff;
     /**
      * Constructs a console log object.
-     * Postcondition: Transfers data from jgrasp to here
+     * Postcondition: Initialized normalCheckOff and HackerCheckOff
      * @param targetPlayer The main player inside the game
      * @throws Exception if ConsoleLog.txt does not exist
      */
@@ -33,9 +33,8 @@ public class ConsoleLog extends Items
     {
         super("Console Log", targetPlayer);
         Jgrasp jgrasp = (Jgrasp)ProgramList.fetchAuthority("Jgrasp");
-
-        jgrasp.transferHacker(this.hackerCheckoff);
-        jgrasp.transferLegit(this.normalCheckoff);
+        this.hackerCheckoff = jgrasp.transferHacker();
+        this.normalCheckoff = jgrasp.transferLegit();
     }
 
     /**

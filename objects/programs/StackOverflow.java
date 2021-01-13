@@ -67,20 +67,21 @@ public class StackOverflow extends Programs
                     new DevTool(this.getTargetPlayer()).addToInventory();
                 }
                 catch(Exception e){}
+                return;
             }
         }
-        else if (((Jgrasp)ProgramList.fetchAuthority("Jgrasp")).getBuggy())
+
+        if (((Jgrasp)ProgramList.fetchAuthority("Jgrasp")).getBuggy())
         {
             try
             {
                 new Debugger(this.getTargetPlayer()).addToInventory();
             }
             catch(Exception e){}
+            return;
         }
-        else
-        {
-            System.out.println("But noone replied. Instead, you got downvoted.");
-        }
+
+        System.out.println("But noone replied. Instead, you got downvoted.");
     }
 
     /**
@@ -97,7 +98,7 @@ public class StackOverflow extends Programs
         
         String answer = this.getScanner().nextLine();
         int sum = this.findMin(arr) + this.findMax(arr);
-
+        
         boolean valid = answer.equals(sum + "");
 
         if (!valid)

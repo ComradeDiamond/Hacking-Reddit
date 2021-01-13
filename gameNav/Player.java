@@ -73,7 +73,7 @@ public class Player {
     {
         this.energy = 80;
         this.money = 100000;
-        this.battery = 100;
+        this.battery = 1000;
         this.inventory = new Items[8]; //Limits the inventory to 8 things
         this.riskChance = 0;
         this.currentProgram = null;

@@ -189,33 +189,35 @@ public class Jgrasp extends Programs
     }
 
     /**
-     * Transfers the hacker ending array items to another array.
-     * Precondition: other.length == 4
-     * Postcondition: The hackerEnding array is not modified
-     * Postcondition: Other != this.hackerEnding in terms of references
-     * @param other The other array to transfer the legitEnding values here to
+     * Returns a new array that consists of the items inside hackerEnding
+     * Postcondition: The original array is not modified
      */
-    public void transferHacker(boolean[] other)
+    public boolean[] transferHacker()
     {
-        for (int i=0; i<this.hackerEnding.length; i++)
+        boolean[] other = new boolean[this.hackerEnding.length];
+
+        for (int i=0; i<other.length; i++)
         {
             other[i] = this.hackerEnding[i];
         }
+
+        return other;
     }
 
     /**
-     * Transfers the legit ending array items to another array.
-     * Precondition: other.length == 3
-     * Postcondition: The legitEnding array is not modified
-     * Postcondition: Other != this.legitEnding in terms of references
-     * @param other The other array to transfer the legitEnding values here to
+     * Returns a new array that consists of the items inside legitEnding
+     * Postcondition: LegitEnding is not modified
      */
-    public void transferLegit(boolean[] other)
+    public boolean[] transferLegit()
     {
-        for (int i=0; i<this.legitEnding.length; i++)
+        boolean[] other = new boolean[this.legitEnding.length];
+
+        for (int i=0; i<other.length; i++)
         {
             other[i] = this.legitEnding[i];
         }
+
+        return other;
     }
 
     /**

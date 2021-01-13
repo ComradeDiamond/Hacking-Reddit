@@ -88,7 +88,8 @@ public class Reddit extends Programs
 
         this.redditStoreItems = new Items[] {
             new Donut(targetPlayer),
-            new OldRedditLink(targetPlayer)
+            new OldRedditLink(targetPlayer),
+            new RainbowDash(targetPlayer)
         };
 
         this.postedChristmas = false;

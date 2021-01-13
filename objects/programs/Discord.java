@@ -397,6 +397,7 @@ public class Discord extends Programs
                 try
                 {
                     ConsoleLog log = new ConsoleLog(this.getTargetPlayer());
+
                     String str = "";
 
                     //If everything works
@@ -433,7 +434,9 @@ public class Discord extends Programs
                     log.addToInventory();
                 }
                 catch(Exception e)
-                {}
+                {
+                    //e.printStackTrace();
+                }
             }
         }
     }
