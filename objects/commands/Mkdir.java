@@ -32,7 +32,7 @@ public class Mkdir extends Commands
     public void execute(String[] command, String text)
     {
         String compiledStr = "----------Mkdir----------\n" + 
-        "Available Programs: " + ProgramList.printString() + "\n" + 
+        "Available Programs: " + ProgramList.print() + "\n" + 
         "Programs Open: " + this.getTargetPlayer().programsOpenLog() + "\n" +
         "Current Program: ";
         

@@ -13,6 +13,11 @@ import objects.commands.*;
  */
 public class CommandWord {
     /**
+     * This is a useless variable that does nothing except fulfill a project requirement
+     */
+    private static int uselessVariable;
+
+    /**
      * Imported list of commands - commands that are available for use (and not in development) 
     appears here
     */
@@ -116,5 +121,14 @@ public class CommandWord {
         str = str.replaceFirst(",", "");
 
         return str;
+    }
+
+    /**
+     * Mutator method that sets the value of uselessVariable.
+     * @param uselessVariable The value to set CommandWord.uselessVariable to
+     */
+    public static void setUselessVariable(int uselessVariable)
+    {
+        CommandWord.uselessVariable = uselessVariable;
     }
 }

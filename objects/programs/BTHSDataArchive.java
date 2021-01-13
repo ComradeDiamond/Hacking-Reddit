@@ -256,6 +256,8 @@ public class BTHSDataArchive extends Programs
         System.out.println("Before you enter, please solve repl.it's complicated recaptchas:");
         System.out.println("What would index 3 of [1, 2, 3, 4, 5] be if the array is shifted 1 index to the right?");
 
+        //arr = this.arrShiftRight(arr);
+        
         String output = this.getScanner().nextLine();
         if (!output.equalsIgnoreCase(this.arrShiftRight(arr)[3] + ""))
         {

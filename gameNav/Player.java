@@ -548,6 +548,8 @@ public class Player {
      */
     public void closeAllPrograms()
     {
+        //This uses a for loop, which is better than a while loop because we need a loop counter
+        //Variable and we have a condition to end the for loop, and we have a loop counter variable
         for (int i=0; i<this.programsOpen.length; i++)
         {
             this.programsOpen[i] = null;

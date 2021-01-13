@@ -53,6 +53,10 @@ public class Game {
         CommandWord.initialize(this.player);
         ProgramList.initialize(this.player);
 
+        //Fulfill one requirement
+        Useless useless = new Useless();
+        useless.changeVariable();
+
         this.doIntroduction();
         
         this.playRound();

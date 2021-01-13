@@ -368,6 +368,15 @@ public class Discord extends Programs
     }
 
     /**
+     * Completely removes all lawsuits from this.suitList.
+     * Postcondition: this.suitList now represents a different arrayList
+     */
+    public void removeAllLawsuits()
+    {
+        this.suitList = new ArrayList<Lawsuits>();
+    }
+
+    /**
      * The upload command on Discord will allow you to upload code from srs bot right into here.
      * This is where you will test the code and recieve a console log.
      * Precondition: Target player's inventory is not full, and has a spot of null open

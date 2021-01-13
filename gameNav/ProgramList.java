@@ -57,7 +57,7 @@ public class ProgramList {
     /**
      * Loops through programList to return the program object if it exists
      * Precondition: The program name exists and is enabled
-     * Postcondition: Returns the program object
+     * Postcondition: Returns the program object.
      * @see ProgramList.fetchAuthority(programName)
      * @param programName The name of the program to fetch for, properly capitalized
      * @return A program object if it exists, and null if it doesn't
@@ -103,7 +103,7 @@ public class ProgramList {
      * The programs represent all programs the player can open and use - if enabled
      * @return All of the names of the available programs
      */
-    public static String printString()
+    public static String print()
     {
         //If all programs have the disabled attribute, return that there are no programs
         if (ProgramList.allDisabled())
