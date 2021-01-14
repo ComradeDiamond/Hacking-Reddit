@@ -33,7 +33,7 @@ public class PigStep extends Items
 
         if (removed)
         {
-            System.out.println(removed + " is now copyright striked!");
+            System.out.println(item + " is now copyright striked!");
             System.out.println("Due to a Unit 5 Standard on intellectual property, we must remove it from your inventory.");
             System.out.println("hmmm... was this what you wanted perhaps?");
         }

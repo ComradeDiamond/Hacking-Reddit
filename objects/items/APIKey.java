@@ -39,7 +39,7 @@ public class APIKey extends Items
             
             String input = this.getScanner().nextLine();
 
-            if (input.equals("I believe in ArrayList Supremacy"))
+            if (input.equals("I believe in ArrayList supremacy"))
             {
                 currProg.hackerCheckoff(3);
                 this.setConsumable(true);
