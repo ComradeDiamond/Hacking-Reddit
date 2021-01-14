@@ -145,9 +145,6 @@ public class Game {
             return true;
         }
 
-        //Lowers risk by 1. Yes, you can have negative risk because you'll need it
-        this.player.changeRiskChance(-1);
-
         //Check sus
         if (player.getSus() >= 100)
         {

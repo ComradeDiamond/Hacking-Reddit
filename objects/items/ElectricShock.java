@@ -17,7 +17,7 @@ public class ElectricShock extends Items
      */
     public ElectricShock(Player targetPlayer) throws Exception
     {
-        super("Emergency Unlock", targetPlayer);
+        super("Electric Shock", targetPlayer);
     }
 
     /**

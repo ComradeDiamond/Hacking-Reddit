@@ -163,7 +163,7 @@ public class Discord extends Programs
             new CoinBomb(targetPlayer),
             new BobaTea(targetPlayer),
             new Debugger(targetPlayer),
-            new Upvote(targetPlayer),
+            new BTHSShirt(targetPlayer),
             new SGOSticker(targetPlayer)
         };
 
