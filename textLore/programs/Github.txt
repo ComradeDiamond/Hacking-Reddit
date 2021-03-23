@@ -1,0 +1,6 @@
+Github!
+The best code storage website that exists. Much, much more accessible and downloadable than google drive.
+The lucky thing for you is... that Srs Bot has a github respository where AWS deploys code from.
+I believe it's called #srs-bot-running.
+
+Maybe... if you use some console logs, you can upload some code to inch your way towards victory.

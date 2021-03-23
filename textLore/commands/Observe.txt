@@ -1,0 +1,5 @@
+You know how in every escape room or adventure game you notice something?
+This is what the observe command will now do for you!
+Use it on a program to find out what's going on.
+Or what the latest trends are.
+Or what some random person decided to post.

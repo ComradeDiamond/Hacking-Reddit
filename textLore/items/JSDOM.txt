@@ -1,0 +1,5 @@
+Two Truths and a Lie version 2.0 ;)
+
+1. JSDOM actually stands for JS Domination because Java is dumb
+2. It's supposed to convert HTML into usable code.
+3. Also comes with DOM methods. Just sayin'

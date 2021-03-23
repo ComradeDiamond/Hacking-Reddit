@@ -1,0 +1,4 @@
+The go to hub to look for help regarding a command :)
+This would work for any program, command, or item (well provided it's in your inventory)
+Definitely works better than sifting through JavaDoc Comments
+Just be careful - as this command also depletes your computer batteries

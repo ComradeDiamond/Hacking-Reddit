@@ -1,0 +1,11 @@
+ObservableException found in thread 'upload' java.lang.doesNotExistException
+    at objects.programs.Discord.java:2021
+    at base -1 of 3E
+    at java.lang.String:43
+
+getElementByClassName of undefined is undefined in thread java.lang.doesNotExistException
+    at objects.programs.Jgrasp.java:72
+    at base java.util.Arrays 2:21
+    at CUSTOM 
+
+CUSTOMEXITCODE 4: Discord

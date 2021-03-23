@@ -1,0 +1,4 @@
+Private key.
+It's a private encryption method for Reddit.
+You can use this to access the programmer side of Reddit.
+Or something like that, it's been a while since I took APCSP

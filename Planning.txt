@@ -1,0 +1,115 @@
+Yikes I accidentally did a weird thing with git client and now I lose all my history progress :( :cri:
+But that's okay I'll just write planning.txt again
+
+AWS
+Data Archive
+Discord
+Grubhub
+JGrasp
+Minecraft
+Reddit
+silk Road
+Stack Overflow
+ 
+Discord --> They'll all extend stuff
+- Bot cmd and testing place
+- After you successfully did something on discord, you will get a confirmation log
+- Upload on discord to test a bot thing (or we'll create a different cmd)
+- Cat emote triggers cat who gives you rainbow table
+- Get stuff from people by spectating comments
+
+Reddit
+- The reddit land of all things reddit
+- Ability to reddit comment
+- Ability to send a reddit post if you like karma #dank
+- Upload command is mostly useless unless you upload in certain subs
+- Fake rainbow table gives access to silk road
+
+Grubhub
+- Order food for $
+Literally that's it.
+- Also you'll need a MLP rainbow dash thingy
+
+Jgrasp
+- Coding IDE
+- Do stuff here to code
+- Will have a 5000% chance of throwing errors
+- When you finish something on jgrasp, you'll be able to test something on discord yay?
+- You'll also be able to progress on a new item by turning in ticket
+
+Stack Overflow
+- Play a minigame to defeat recaptcha
+- Fail to defeat recaptcha and you'll lose 20 batteries and 50 energy because you're a darn robot
+- Has a 50% chance to get help with your jgrasp code
+- If jgrasp has no bug, you'll be downvoted to oblivion unless certain quest stuff exist. Also you'll be forced to solve 3 recaptchas in a row
+
+- 
+
+Imo part of the fun here is just managing energy lmaooooooooooooooooooooooooooo
+
+Minecraft
+- Watch a cow go from left to right
+- Occasionally a villager will trade with you for $. Still have no idea how that works.
+
+Silk Road
+- Buying stuff here has sus
+- Bitcoin mitigates sus
+- But it's still sus and can attract lawsuits
+- Can't get rid of sus, but you can get rid of risk slowly :/
+
+Notable items
+Observe will bring up a random thing
+- Cleansing foam
+- BTHS Data Archive
+- Riot Shield
+- IKEA Table --> Use with MLP Rainbow --> Craft in Minecraft --> Rainbow Table
+- AI (Weapons of math destruction lul)
+- Sunglasses Drip (It's a new 2020 trend)
+
+Drip in dark web will show you a few extra things you can buy (if have time). If not, drip will just return your risk. You're not going to know your sus stat
+
+BTHS Data archive
+- Observe: Gives random useless facts about BTHS
+- Slap a pair of sunglasses and then you'll know how to get hackersend ending
+
+Get rainbow table items --> Get rainbow table
+Use rainbow table in jgrasp
+Folwell Password cracking powerpoint --> if you view Folwell decryption lessons --> Password Cracker
+Use password cracker in jgrasp and....
+Try to brute force your way in jgrasp (Run time error - computer crashes)  --> If you use glasses on jgrasp tho, you'll know to go on folwell office hours and he'll do it for you
+Apply folwell fix
+Get the reddit private encryption key --> Use it in reddit
+Get access to reddit panel. 
+Change the reddit API TOS. You'll need a password but the data archive should tell you it's smth like "Arrays are trash"
+Apply for a reddit API --> Get reddit API key ("I believe in ArrayList Supremacy")
+Use API Key
+Srs Bot and win
+
+Alternatively, you could go to normal route...
+Reddit your way to r/christmas
+Have jgrasp on
+Have heroku on
+Upload on stack overflow and they'll give you developer tools
+
+Use devtools on reddit. This will give you a tad bit of risk.
+Play with a ton of games. You'll uncover something.
+You can also unscramble some text to report smth. Or you can just type quit. If you get it wrong you get risk.
+
+1) HTML div classNames are all _____________
+2) Literally just write something about img and you'll find they have a link
+3) Literally write smth about r/christmas
+
+Input all 3 successfully in jgrasp and then run bot and you'll find web fetching module does not exist when git upload. BUT you'll now get an error log. Jgrasp will show a "jgrasp error"
+Use the error log on stack overflow and everyone will get mad at you and you'll get a lawsuit
+Lawsuit should prompt you to use it in discord, where you can say waste energy until cat responds. That's a 20% chance.
+cat will then tell you to use jsdom library
+Use library in jgrasp. Debug. Run discord. Upload github.
+Now you get another huge bug about new reddit restricting bot access. Stack Overflow will ask you to use old reddit and give old reddit link.
+Use old reddit link. Debug. 
+Run discord
+Upload github
+Win.
+
+AWS
+
+- Bot hosting - need this on if you want to get bot hosting/running

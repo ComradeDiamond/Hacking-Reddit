@@ -1,0 +1,4 @@
+This returns a log of everything in the console.
+Which means you can upload it right into Github to update the bot code!
+
+Also makes for a really fast debugging tool. Actually faster than typing out System.out.println

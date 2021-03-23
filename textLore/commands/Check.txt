@@ -1,0 +1,5 @@
+r/LifeProTips: This will only show you some stats pertinent to your player
+There's other stats you *might* want to keep track of in your programs.
+If only... if only there was a way to keep track of your progress to winning the game...
+
+If only I can get like a map or archive or something
